@@ -1,0 +1,5 @@
+# Trained ML models will be saved here
+# This directory will contain:
+# - model_registry.json (registry of all saved models)
+# - Individual model files (e.g., linear_20250706_143022.json)
+# - Model metadata and performance information
