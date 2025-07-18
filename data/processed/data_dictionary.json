@@ -1,0 +1,20 @@
+{
+  "CLI": "Unique client identifier",
+  "CLIENT_MARCHE": "Client market type (Particuliers, PME, TPE, GEI, TRE, PRO)",
+  "CSP": "Socio-professional category",
+  "Segment_NMR": "Client classification segment",
+  "CLT_SECTEUR_ACTIVITE_LIB": "Client activity sector",
+  "Revenu_Estime": "Estimated annual revenue (\u20ac)",
+  "Nbr_Cheques_2024": "Number of checks issued in 2024",
+  "Montant_Max_2024": "Maximum check amount in 2024 (\u20ac)",
+  "Ecart_Nbr_Cheques_2024_2025": "Difference in check numbers between 2024 and 2025",
+  "Ecart_Montant_Max_2024_2025": "Difference in maximum amounts between 2024 and 2025 (\u20ac)",
+  "A_Demande_Derogation": "Has requested derogation (1=Yes, 0=No)",
+  "Ratio_Cheques_Paiements_2025": "Ratio of check payments to total payments in 2025",
+  "Utilise_Mobile_Banking": "Uses mobile banking (1=Yes, 0=No)",
+  "Nombre_Methodes_Paiement": "Number of different payment methods used",
+  "Montant_Moyen_Cheque": "Average check amount (\u20ac)",
+  "Montant_Moyen_Alternative": "Average alternative payment amount (\u20ac)",
+  "Target_Nbr_Cheques_Futur": "Target: Predicted future number of checks",
+  "Target_Montant_Max_Futur": "Target: Predicted future maximum amount (\u20ac)"
+}

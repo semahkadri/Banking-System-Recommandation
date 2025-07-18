@@ -1,0 +1,157 @@
+{
+  "0013d624": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-07-11T10:30:00",
+      "source": "RECOMMENDATION"
+    },
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-07-11T14:15:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "016fabdb": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-07-11T11:00:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "001b4107": [
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-07-11T12:30:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "003c2b31": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-07-11T13:45:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "0026bd85": [
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-07-11T15:20:00",
+      "source": "RECOMMENDATION"
+    },
+    {
+      "service_id": "services_premium",
+      "adoption_date": "2025-07-11T16:10:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "03cfc170": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-07-11T09:15:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "0018b0e2": [
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-07-10T16:30:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "00b1b5be": [
+    {
+      "service_id": "virement_automatique",
+      "adoption_date": "2025-07-10T09:45:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "0001d625": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-07-09T16:20:00",
+      "source": "RECOMMENDATION"
+    },
+    {
+      "service_id": "paiement_mobile",
+      "adoption_date": "2025-07-09T11:10:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "0029d701": [
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-07-08T13:30:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "003b2f8e": [
+    {
+      "service_id": "formation_digital",
+      "adoption_date": "2025-07-07T08:45:00",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "004a1b2c": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-06-06T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "005c3d4e": [
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-06-01T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "006e5f6a": [
+    {
+      "service_id": "virement_automatique",
+      "adoption_date": "2025-05-27T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "007b8c9d": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-05-22T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "008f1a2b": [
+    {
+      "service_id": "carte_bancaire",
+      "adoption_date": "2025-05-07T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "009c3d4f": [
+    {
+      "service_id": "services_premium",
+      "adoption_date": "2025-04-29T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "010e5f7a": [
+    {
+      "service_id": "formation_digital",
+      "adoption_date": "2025-04-21T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "011a2b3c": [
+    {
+      "service_id": "mobile_banking",
+      "adoption_date": "2025-03-13T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ],
+  "012d4e5f": [
+    {
+      "service_id": "carte_sans_contact",
+      "adoption_date": "2025-02-11T16:02:32.920989",
+      "source": "RECOMMENDATION"
+    }
+  ]
+}

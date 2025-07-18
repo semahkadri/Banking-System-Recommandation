@@ -120,7 +120,7 @@ class RecommendationManager:
         
         return {
             "total_clients": len(batch_recommendations),
-            "recommendations": batch_recommendations,
+            "clients": batch_recommendations,
             "generation_date": datetime.now().isoformat()
         }
     

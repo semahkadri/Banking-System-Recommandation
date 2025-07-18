@@ -233,9 +233,6 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-# Banking Project Specific Files
-# Generated processed data files (will be created by the pipeline)
-data/processed/
 
 # Raw data files (contain sensitive banking data) - but keep folder structure
 data/raw/*.csv

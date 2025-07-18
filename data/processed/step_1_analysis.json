@@ -1,0 +1,16 @@
+{
+  "check_usage_decline": {
+    "historical_checks": 287793,
+    "current_checks": 35664,
+    "decline_rate": 87.60775974398265
+  },
+  "alternative_payment_growth": {
+    "historical_alternatives": 433720,
+    "current_alternatives": 686795,
+    "growth_rate": 58.34985705063175
+  },
+  "unique_clients": {
+    "historical": 120875,
+    "current": 117550
+  }
+}

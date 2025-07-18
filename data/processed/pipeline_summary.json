@@ -1,0 +1,19 @@
+{
+  "pipeline_completed": true,
+  "datasets_created": {
+    "dataset_1_current": 117550,
+    "dataset_2_historical": 120875,
+    "subset_c_differences": 4138,
+    "subset_d_derogations": 1379,
+    "final_dataframe": 4138
+  },
+  "files_created": [
+    "dataset_1_current_2025.csv",
+    "dataset_2_historical_2024.csv",
+    "subset_c_differences.csv",
+    "subset_d_derogations.csv",
+    "dataset_final.csv",
+    "data_dictionary.json"
+  ],
+  "execution_timestamp": "2025-07-18T18:57:23.849722"
+}

@@ -1,0 +1,37 @@
+{
+  "dataset_overview": {
+    "total_clients": 4138,
+    "total_features": 64,
+    "processing_method": "complete_7_step_pipeline"
+  },
+  "feature_statistics": {
+    "numerical_features": 46,
+    "categorical_features": 15,
+    "boolean_features": 9
+  },
+  "business_metrics": {
+    "clients_with_derogations": 1379,
+    "derogation_rate": 0.333252779120348,
+    "mobile_banking_adoption": 0.0,
+    "average_estimated_revenue": 60325.31211951379,
+    "average_checks_2024": 0.7837119381343645,
+    "average_max_amount_2024": 107107.18868293862
+  },
+  "target_variable_stats": {
+    "future_checks_mean": 0.4833252779120348,
+    "future_checks_std": 1.1546324438079487,
+    "future_amount_mean": 142104.64255992914,
+    "future_amount_std": 30183.417864333245
+  },
+  "market_distribution": {
+    "TPE": 713,
+    "GEI": 712,
+    "PME": 702,
+    "Particuliers": 681,
+    "PRO": 668,
+    "TRE": 662
+  },
+  "segment_distribution": {
+    "0": 4138
+  }
+}

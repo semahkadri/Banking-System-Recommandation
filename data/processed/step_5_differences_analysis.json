@@ -1,0 +1,30 @@
+{
+  "Ecart_Nbr_Cheques_2024_2025": {
+    "subset_c_mean": -5.5956984050265826,
+    "subset_d_mean": -5.73313995649021,
+    "difference": -0.13744155146362758,
+    "subset_c_std": 5.150164765033059,
+    "subset_d_std": 5.3096972588956195
+  },
+  "Ecart_Montant_Max_2024_2025": {
+    "subset_c_mean": 30550.943318028032,
+    "subset_d_mean": 29788.557389412617,
+    "difference": -762.3859286154147,
+    "subset_c_std": 30929.62225121937,
+    "subset_d_std": 31493.012675251404
+  },
+  "Nbr_Cheques_2025": {
+    "subset_c_mean": 0.7837119381343645,
+    "subset_d_mean": 0.7846265409717187,
+    "difference": 0.0009146028373542281,
+    "subset_c_std": 1.1043481189635873,
+    "subset_d_std": 1.104494736577185
+  },
+  "Montant_Max_2025": {
+    "subset_c_mean": 107107.18868293862,
+    "subset_d_mean": 106598.02158810734,
+    "difference": -509.16709483128216,
+    "subset_c_std": 16862.76399275028,
+    "subset_d_std": 17560.805552933
+  }
+}

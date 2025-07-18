@@ -149,7 +149,7 @@ class RecommendationEngine:
         # Règles de recommandation par segment
         self.recommendation_rules = {
             "TRADITIONNEL_RESISTANT": {
-                "priority": ["formation_cheque_digital", "accompagnement_personnel", "carte_proximite"],
+                "priority": ["formation_digital", "accompagnement_personnel", "carte_bancaire"],
                 "messaging": "Accompagnement progressif vers les alternatives",
                 "urgency": "BASSE"
             },
@@ -164,17 +164,17 @@ class RecommendationEngine:
                 "urgency": "MOYENNE"
             },
             "DIGITAL_ADOPTER": {
-                "priority": ["services_premium", "multi_carte", "virement_international"],
+                "priority": ["services_premium", "carte_sans_contact", "paiement_mobile"],
                 "messaging": "Services avancés pour utilisateurs digitaux",
                 "urgency": "HAUTE"
             },
             "DIGITAL_NATIF": {
-                "priority": ["crypto_services", "neo_banking", "investment_digital"],
+                "priority": ["services_premium", "mobile_banking", "carte_sans_contact"],
                 "messaging": "Solutions innovantes et avancées",
                 "urgency": "HAUTE"
             },
             "EQUILIBRE": {
-                "priority": ["carte_bancaire", "mobile_banking", "optimisation_frais"],
+                "priority": ["carte_bancaire", "mobile_banking", "virement_automatique"],
                 "messaging": "Équilibre optimal entre services traditionnels et modernes",
                 "urgency": "MOYENNE"
             }
@@ -240,7 +240,27 @@ class RecommendationEngine:
             }
         }
         
+        # VALIDATION SYSTÈME: Vérifier que toutes les recommandations existent dans le catalogue
+        self._validate_recommendation_rules()
+        
         print("[RECOMMENDATION] Système de recommandation initialisé")
+    
+    def _validate_recommendation_rules(self):
+        """Valide que tous les services dans les règles existent dans le catalogue."""
+        all_errors = []
+        
+        for segment, rules in self.recommendation_rules.items():
+            priority_services = rules.get('priority', [])
+            for service in priority_services:
+                if service not in self.services_catalog:
+                    error = f"Service non-existant '{service}' dans segment '{segment}'"
+                    all_errors.append(error)
+                    print(f"[ERREUR VALIDATION] {error}")
+        
+        if all_errors:
+            raise ValueError(f"Services non-existants détectés: {all_errors}")
+        else:
+            print("[VALIDATION] Tous les services recommandés existent dans le catalogue ✓")
     
     def generate_recommendations(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
         """Génère des recommandations personnalisées pour un client."""
@@ -289,7 +309,15 @@ class RecommendationEngine:
             priority_alternatives = ['carte_bancaire', 'virement_automatique', 'paiement_mobile']
             adjusted_recommendations = priority_alternatives + adjusted_recommendations
         
-        return list(dict.fromkeys(adjusted_recommendations))  # Supprime les doublons
+        # VALIDATION CRITIQUE: Supprimer les services qui n'existent pas dans le catalogue
+        validated_recommendations = [r for r in adjusted_recommendations if r in self.services_catalog]
+        
+        # Log des services invalides pour debugging
+        invalid_services = [r for r in adjusted_recommendations if r not in self.services_catalog]
+        if invalid_services:
+            print(f"[ERREUR] Services non-existants supprimés: {invalid_services}")
+        
+        return list(dict.fromkeys(validated_recommendations))  # Supprime les doublons
     
     def _score_recommendations(self, client_data: Dict[str, Any], 
                              recommendations: List[str]) -> List[Dict[str, Any]]:
