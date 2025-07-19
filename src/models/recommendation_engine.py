@@ -260,7 +260,7 @@ class RecommendationEngine:
         if all_errors:
             raise ValueError(f"Services non-existants détectés: {all_errors}")
         else:
-            print("[VALIDATION] Tous les services recommandés existent dans le catalogue ✓")
+            print("[VALIDATION] Tous les services recommandes existent dans le catalogue [OK]")
     
     def generate_recommendations(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
         """Génère des recommandations personnalisées pour un client."""
