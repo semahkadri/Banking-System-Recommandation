@@ -17,6 +17,7 @@ warnings.filterwarnings('ignore')
 from .recommendation_engine import RecommendationEngine, RecommendationTracker
 from .eligibility_rules import integrate_eligibility_with_recommendations
 from ..utils.data_utils import clean_numeric_data
+from ..utils.client_id_utils import extract_client_id
 
 
 class RecommendationManager:
@@ -83,6 +84,39 @@ class RecommendationManager:
         self.tracker.record_recommendation(client_id, recommendations)
         
         return recommendations
+    
+    def get_manual_client_recommendations(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Génère des recommandations pour un client avec des données saisies manuellement.
+        Support pour NOUVEAUX clients ou données personnalisées.
+        """
+        try:
+            # Extraire l'ID client (nouveau ou existant)
+            client_id = extract_client_id(client_data)
+            
+            # Nettoyer et valider les données
+            cleaned_data = self._clean_client_data(client_data)
+            
+            # S'assurer que l'ID est préservé
+            cleaned_data['CLI'] = client_id
+            
+            # Générer les recommandations directement avec les données fournies
+            recommendations = self.recommendation_engine.generate_recommendations(cleaned_data)
+            
+            # Ajouter des insights avancés
+            recommendations['advanced_insights'] = self._generate_advanced_insights(cleaned_data, recommendations)
+            
+            # Ajouter l'analyse d'éligibilité bancaire
+            recommendations['eligibility_analysis'] = integrate_eligibility_with_recommendations(cleaned_data)
+            
+            # Enregistrer pour le suivi (avec flag pour données manuelles)
+            recommendations['data_source'] = 'manual_input'
+            self.tracker.record_recommendation(client_id, recommendations)
+            
+            return recommendations
+            
+        except Exception as e:
+            return {"error": f"Erreur lors de la génération des recommandations manuelles: {str(e)}"}
     
     def get_batch_recommendations(self, client_ids: List[str] = None, 
                                  limit: int = 100) -> Dict[str, Any]:

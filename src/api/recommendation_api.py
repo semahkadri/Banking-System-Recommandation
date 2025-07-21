@@ -33,7 +33,7 @@ class RecommendationAPI:
     def get_client_recommendations(self, client_id: str) -> Dict[str, Any]:
         """
         Endpoint: GET /api/recommendations/client/{client_id}
-        Obtient les recommandations pour un client spécifique.
+        Obtient les recommandations pour un client spécifique EXISTANT.
         """
         try:
             result = self.manager.get_client_recommendations(client_id)
@@ -55,6 +55,38 @@ class RecommendationAPI:
             }
         except Exception as e:
             self._log_api_call("get_client_recommendations", {"client_id": client_id}, "ERROR")
+            return {
+                "status": "error",
+                "error": str(e),
+                "timestamp": datetime.now().isoformat()
+            }
+    
+    def get_manual_client_recommendations(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Endpoint: POST /api/recommendations/manual
+        Génère des recommandations pour des données client saisies manuellement (NOUVEAUX clients).
+        """
+        try:
+            # Utiliser la méthode du manager pour données manuelles
+            result = self.manager.get_manual_client_recommendations(client_data)
+            
+            # Vérifier si le résultat est une erreur
+            if isinstance(result, dict) and 'error' in result:
+                self._log_api_call("get_manual_client_recommendations", {"client_id": client_data.get('CLI', 'manual')}, "ERROR")
+                return {
+                    "status": "error",
+                    "error": result['error'],
+                    "timestamp": datetime.now().isoformat()
+                }
+            
+            self._log_api_call("get_manual_client_recommendations", {"client_id": client_data.get('CLI', 'manual')}, "SUCCESS")
+            return {
+                "status": "success",
+                "data": result,
+                "timestamp": datetime.now().isoformat()
+            }
+        except Exception as e:
+            self._log_api_call("get_manual_client_recommendations", {"client_id": client_data.get('CLI', 'manual')}, "ERROR")
             return {
                 "status": "error",
                 "error": str(e),

@@ -4,6 +4,12 @@
 
 Ce projet implémente un **système complet de prédiction et recommandation bancaire** pour optimiser l'utilisation des services bancaires et réduire la dépendance aux chèques. Le système traite les données de **4 138 clients réels** et génère des prédictions et recommandations personnalisées.
 
+### **✅ MISE À JOUR MAJEURE : Workflow Unifié**
+Le système supporte maintenant un **workflow complet** pour clients existants ET nouveaux :
+- **Prédictions** : Support formulaire manuel pour nouveaux clients
+- **Recommandations** : Dual mode (existant + nouveau client)
+- **IDs cohérents** : Même identifiant client dans tous les systèmes
+
 ---
 
 ## 🏗️ Architecture du Système

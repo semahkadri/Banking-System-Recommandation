@@ -4,6 +4,11 @@
 
 Ce système de recommandation bancaire transforme la façon dont votre banque accompagne ses clients dans leur transition vers les services modernes. Basé sur l'analyse comportementale de **4 138 clients réels**, il génère automatiquement des recommandations personnalisées pour optimiser l'utilisation des services bancaires et réduire la dépendance aux chèques.
 
+### **✅ NOUVELLE CAPACITÉ : Support Clients Nouveaux ET Existants**
+Le système propose maintenant un **workflow unifié** permettant de générer des prédictions et recommandations pour :
+- **Clients existants** : sélection depuis votre base de données
+- **Nouveaux clients** : saisie manuelle des informations pour évaluation immédiate
+
 ---
 
 ## 🎯 **Objectif Business Principal**
@@ -199,6 +204,45 @@ Pour chaque service, le système calcule :
 - Tri des services par score global décroissant
 - Sélection des 3-5 meilleures recommandations
 - Limitation pour éviter la surcharge informationnelle
+
+---
+
+## 🔄 **Workflows d'Utilisation Unifiés**
+
+### **🎯 Workflow 1 : Client Existant**
+**Cas d'usage** : Révision périodique, mise à jour des recommandations
+
+1. **Interface** : Sélection client depuis dropdown
+2. **Données** : Récupération automatique depuis la base de données
+3. **Analyse** : Profil comportemental mis à jour
+4. **Résultat** : Recommandations ajustées selon l'évolution récente
+
+### **✨ Workflow 2 : Nouveau Client (NOUVEAUTÉ)**
+**Cas d'usage** : Onboarding, évaluation prospect, simulation
+
+1. **Interface** : Formulaire de saisie manuelle
+2. **Données** : Saisie des informations client (même format que prédictions)
+3. **Analyse** : Segmentation comportementale en temps réel
+4. **Résultat** : Recommandations immédiates pour prospect/nouveau client
+
+### **🔮 Workflow 3 : Unified Prediction → Recommendation**
+**Cas d'usage** : Processus complet d'évaluation client
+
+1. **Étape 1** : Prédiction (onglet Prédictions)
+   - Saisie des données client
+   - Obtention des prédictions (nombre de chèques, montant max)
+   - **ID client cohérent** généré/utilisé
+
+2. **Étape 2** : Recommandation (onglet Recommandations)
+   - Mode "Nouveau Client" avec **même ID client**
+   - Génération des recommandations personnalisées
+   - **Workflow unifié** avec traçabilité complète
+
+### **💡 Avantages du Workflow Unifié**
+- **Cohérence ID** : Même identifiant client dans prédiction et recommandation
+- **Traçabilité** : Suivi complet du parcours client
+- **Flexibilité** : Support nouveaux clients + clients existants
+- **Efficacité** : Workflow intégré pour onboarding complet
 
 ---
 

@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional, Tuple
 
 from ..utils.data_utils import clean_numeric_data, calculate_metrics
+from ..utils.client_id_utils import extract_client_id
 
 
 class OptimizedLinearRegression:
@@ -536,6 +537,9 @@ class CheckPredictionModel:
         if not self.is_trained:
             raise ValueError("Model must be trained before making predictions")
         
+        # Extract client ID using standardized utility
+        client_id = extract_client_id(client_data)
+        
         # Prepare features
         X, _, _ = self._prepare_features([client_data])
         
@@ -548,6 +552,7 @@ class CheckPredictionModel:
         montant_pred = max(0, montant_pred)
         
         return {
+            'client_id': client_id,  # Add client ID to prediction result
             'predicted_nbr_cheques': nbr_pred,
             'predicted_montant_max': montant_pred,
             'model_confidence': {

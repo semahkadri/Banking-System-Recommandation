@@ -15,6 +15,11 @@ from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings('ignore')
 
+# Import client ID utilities
+import sys
+sys.path.append(str(Path(__file__).parent.parent))
+from utils.client_id_utils import extract_client_id
+
 class ClientBehaviorAnalyzer:
     """Analyse le comportement des clients pour la segmentation."""
     
@@ -278,8 +283,11 @@ class RecommendationEngine:
         # Priorisation
         prioritized_recommendations = self._prioritize_recommendations(scored_recommendations)
         
+        # Extract client ID using standardized utility (same as prediction system)
+        client_id = extract_client_id(client_data)
+        
         return {
-            'client_id': client_data.get('CLI', 'unknown'),
+            'client_id': client_id,
             'behavior_profile': behavior_profile,
             'recommendations': prioritized_recommendations,
             'impact_estimations': self._estimate_impact(client_data, prioritized_recommendations),

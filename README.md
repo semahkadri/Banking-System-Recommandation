@@ -7,11 +7,13 @@
 - **Number of checks** each client will issue
 - **Maximum authorized amount** per check
 - **3 ML algorithms** with 64-95% accuracy
+- **✅ NEW: Full support for existing AND new clients**
 
 ### **🎯 Personalized Recommendation Engine**  
 - **6 behavioral segments** with tailored approaches
 - **8 banking services** with intelligent scoring
 - **Adoption tracking** and ROI measurement
+- **✅ NEW: Manual input for new clients**
 
 **Status**: ✅ **Production Ready** | ✅ **Currency: TND** | ✅ **Full Documentation**
 
@@ -49,30 +51,39 @@ streamlit run dashboard/app.py
 - ✅ **Personalized recommendations**
 - ✅ **Service adoption tracking**
 - ✅ **Digital transformation support**
+- ✅ **NEW: Unified workflow for new clients**
+- ✅ **NEW: Consistent client ID management**
 
-## 🎯 **NEW: Personalized Recommendation System**
+## 🎯 **NEW: Unified Workflow System**
 
-### **Complete Banking Solution**
-Your system now includes a comprehensive **personalized recommendation engine** that provides:
+### **🔄 Complete Client Support**
+Your system now supports **both existing and new clients** with a unified workflow:
 
 - **🎯 Smart Client Segmentation** - 6 behavioral segments with tailored approaches
 - **📊 Personalized Recommendations** - 8 banking services with intelligent scoring
 - **📈 Adoption Tracking** - Complete effectiveness measurement and ROI analysis
 - **🔍 Deep Profile Analysis** - Detailed client behavior analysis and peer comparison
 - **📋 Analytics Dashboard** - Real-time statistics and trend analysis
+- **✅ NEW: Manual Input Mode** - Full support for new client data entry
 
 ### **Key Features**
-- **Client Behavioral Analysis** - Automatic segmentation based on payment habits
-- **Personalized Service Recommendations** - Tailored banking services for each client
-- **Impact Estimation** - Predicted reduction in check usage and financial benefits
-- **Adoption Tracking** - Monitor service adoption rates and effectiveness
-- **Comprehensive Analytics** - Detailed reporting and performance metrics
+- **Unified Client Management** - Same ID across prediction and recommendation systems
+- **Dual Input Modes** - Existing clients (dropdown) + New clients (manual form)
+- **Consistent Data Flow** - Prediction → Recommendation workflow for any client type
+- **Real-time Analysis** - Instant behavioral segmentation and service recommendations
+- **Complete Traceability** - Consistent client IDs ensure full audit trail
 
 ### **Quick Access**
-1. **🎯 Recommendations Tab** - Generate personalized recommendations for individual clients
-2. **📋 Analytics Tab** - View adoption statistics and effectiveness reports
-3. **🔍 Profile Analysis** - Deep dive into client behavioral patterns
-4. **📊 Segment Analysis** - Analyze entire client segments and markets
+1. **🔮 Predictions Tab** - Generate predictions for existing OR new clients
+2. **🎯 Recommendations Tab** - Two modes: "Existing Client" or "New Client (Manual)"
+3. **📋 Analytics Tab** - View adoption statistics and effectiveness reports
+4. **🔍 Profile Analysis** - Deep dive into client behavioral patterns
+5. **📊 Segment Analysis** - Analyze entire client segments and markets
+
+### **✨ Unified Workflow Example**
+1. **New Client Onboarding**: Manual form → Get predictions → Get recommendations
+2. **Existing Client Review**: Select from dropdown → Get updated recommendations
+3. **What-If Analysis**: Modify client data → See impact on predictions and recommendations
 
 ## 📚 **Documentation**
 - **🚀 PRODUCTION_DEPLOYMENT.md** - Complete deployment guide

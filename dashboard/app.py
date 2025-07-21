@@ -886,357 +886,186 @@ def show_recommendations_page():
     with tab1:
         st.subheader("Recommandations pour un Client")
         
-        # Client selection
-        if st.session_state.dataset is not None:
-            client_ids = st.session_state.dataset['CLI'].unique()
-            selected_client = st.selectbox(
-                "Sélectionnez un client:",
-                options=client_ids,
-                help="Choisissez un client pour générer des recommandations personnalisées"
-            )
+        # Mode selection
+        input_mode = st.radio(
+            "Mode de saisie client:",
+            ["📋 Client Existant", "✏️ Nouveau Client (Manuel)"],
+            help="Choisissez comment vous voulez spécifier le client"
+        )
+        
+        if input_mode == "📋 Client Existant":
+            # Client selection from existing dataset
+            if st.session_state.dataset is not None:
+                client_ids = st.session_state.dataset['CLI'].unique()
+                selected_client = st.selectbox(
+                    "Sélectionnez un client existant:",
+                    options=client_ids,
+                    help="Choisissez un client du dataset pour générer des recommandations"
+                )
+                
+                if st.button("🎯 Générer Recommandations", type="primary", key="rec_existing"):
+                    with st.spinner("Génération des recommandations..."):
+                        try:
+                            # Get recommendations for existing client
+                            recommendations = st.session_state.recommendation_api.get_client_recommendations(selected_client)
+                            display_recommendation_results(recommendations)
+                        except Exception as e:
+                            st.error(f"Erreur lors de la génération des recommandations: {e}")
+            else:
+                st.warning("⚠️ Aucun dataset disponible. Veuillez d'abord exécuter le pipeline de données.")
+        
+        else:  # Nouveau Client (Manuel)
+            st.markdown("### ✏️ Saisie Manuelle - Nouveau Client")
             
-            if st.button("🎯 Générer Recommandations", type="primary"):
-                with st.spinner("Génération des recommandations..."):
-                    try:
-                        # Get recommendations
-                        recommendations = st.session_state.recommendation_api.get_client_recommendations(selected_client)
-                        
-                        if recommendations.get('status') == 'success':
-                            rec_data = recommendations['data']
-                            
-                            # Display client info
-                            st.markdown("### 📋 Informations Client")
-                            col1, col2, col3, col4 = st.columns(4)
-                            
-                            with col1:
-                                behavior_segment = rec_data.get('behavior_profile', {}).get('behavior_segment', 'N/A')
-                                st.metric("Segment Comportemental", behavior_segment)
-                            
-                            with col2:
-                                check_score = rec_data.get('behavior_profile', {}).get('check_dependency_score', 0)
-                                st.metric("Dépendance Chèques", f"{check_score * 100:.1f}%")
-                            
-                            with col3:
-                                digital_score = rec_data.get('behavior_profile', {}).get('digital_adoption_score', 0)
-                                st.metric("Adoption Digitale", f"{digital_score * 100:.1f}%")
-                            
-                            with col4:
-                                reduction_estimate = rec_data.get('impact_estimations', {}).get('pourcentage_reduction', 0)
-                                st.metric("Réduction Estimée", f"{reduction_estimate:.1f}%")
-                            
-                            # Display recommendations
-                            st.markdown("### 🎯 Recommandations Personnalisées")
-                            
-                            for i, rec in enumerate(rec_data.get('recommendations', [])):
-                                with st.expander(f"📌 {rec.get('service_info', {}).get('nom', 'Service')} - Score: {rec.get('scores', {}).get('global', 0):.2f}"):
-                                    service_info = rec.get('service_info', {})
-                                    
-                                    st.markdown(f"**Description:** {service_info.get('description', 'N/A')}")
-                                    st.markdown(f"**Objectif:** {service_info.get('cible', 'N/A')}")
-                                    st.markdown(f"**Coût:** {format_currency_tnd(service_info.get('cout', 0), 0)}")
-                                    
-                                    # Avantages
-                                    avantages = service_info.get('avantages', [])
-                                    if avantages:
-                                        st.markdown("**Avantages:**")
-                                        for avantage in avantages:
-                                            st.markdown(f"• {avantage}")
-                                    
-                                    # Scores détaillés
-                                    scores = rec.get('scores', {})
-                                    col1, col2, col3 = st.columns(3)
-                                    with col1:
-                                        st.metric("Score de Base", f"{scores.get('base', 0):.2f}")
-                                    with col2:
-                                        st.metric("Score d'Urgence", f"{scores.get('urgency', 0):.2f}")
-                                    with col3:
-                                        st.metric("Score de Faisabilité", f"{scores.get('feasibility', 0):.2f}")
-                                    
-                                    # Bouton d'adoption
-                                    if st.button(f"✅ Marquer comme Adopté", key=f"adopt_{i}"):
-                                        adoption_result = st.session_state.recommendation_api.record_service_adoption(
-                                            selected_client, rec.get('service_id')
-                                        )
-                                        if adoption_result.get('status') == 'success':
-                                            st.success("✅ Adoption enregistrée avec succès!")
-                                        else:
-                                            st.error("❌ Erreur lors de l'enregistrement")
-                            
-                            # Impact estimé
-                            st.markdown("### 📈 Impact Estimé")
-                            impact = rec_data.get('impact_estimations', {})
-                            
-                            col1, col2, col3 = st.columns(3)
-                            with col1:
-                                st.metric("Réduction Chèques", f"{impact.get('reduction_cheques_estimee', 0):.1f}")
-                            with col2:
-                                st.metric("Pourcentage Réduction", f"{impact.get('pourcentage_reduction', 0):.1f}%")
-                            with col3:
-                                st.metric("Bénéfice Estimé", format_currency_tnd(impact.get('benefice_bancaire_estime', 0)))
-                            
-                            # Détails financiers
-                            if impact.get('economies_operationnelles', 0) > 0:
-                                col1, col2 = st.columns(2)
-                                with col1:
-                                    st.metric("Économies Opérationnelles", format_currency_tnd(impact.get('economies_operationnelles', 0)))
-                                with col2:
-                                    st.metric("Revenus Additionnels", format_currency_tnd(impact.get('revenus_additionnels', 0)))
-                            
-                            # Insights avancés
-                            advanced_insights = rec_data.get('advanced_insights', {})
-                            if advanced_insights:
-                                st.markdown("### 🔍 Insights Avancés")
-                                
-                                # Insights comportementaux
-                                behavioral_insights = advanced_insights.get('behavioral_insights', [])
-                                if behavioral_insights:
-                                    st.markdown("#### 📊 Analyse Comportementale")
-                                    for insight in behavioral_insights:
-                                        st.info(insight)
-                                
-                                # Prédictions d'évolution
-                                evolution = advanced_insights.get('evolution_predictions', {})
-                                if evolution:
-                                    st.markdown("#### 📈 Prédictions d'Évolution")
-                                    col1, col2, col3 = st.columns(3)
-                                    with col1:
-                                        st.metric("Trajectoire", evolution.get('trajectory', 'N/A').title())
-                                    with col2:
-                                        st.metric("Usage Chèques 6M", f"{evolution.get('check_usage_6m', 0):.0f}")
-                                    with col3:
-                                        urgency = evolution.get('intervention_urgency', 'low')
-                                        color = "🔴" if urgency == 'high' else "🟡" if urgency == 'medium' else "🟢"
-                                        st.metric("Urgence", f"{color} {urgency.title()}")
-                                
-                                # Insights spécifiques au segment
-                                segment_insights = advanced_insights.get('segment_specific_insights', {})
-                                if segment_insights:
-                                    st.markdown("#### 🎯 Insights Segment")
-                                    st.markdown(f"**Description:** {segment_insights.get('description', 'N/A')}")
-                                    st.markdown(f"**Approche:** {segment_insights.get('approach', 'N/A')}")
-                                
-                                # Potentiel de valeur
-                                value_potential = advanced_insights.get('value_potential', {})
-                                if value_potential:
-                                    st.markdown("#### 💰 Potentiel de Valeur")
-                                    col1, col2 = st.columns(2)
-                                    with col1:
-                                        st.metric("Valeur Totale", format_currency_tnd(value_potential.get('total_value_potential', 0)))
-                                    with col2:
-                                        category = value_potential.get('value_category', 'LOW')
-                                        color = "🟢" if category == 'HIGH' else "🟡" if category == 'MEDIUM' else "🔴"
-                                        st.metric("Catégorie", f"{color} {category}")
-                                
-                                # Plan d'action
-                                actions = advanced_insights.get('recommended_actions', [])
-                                if actions:
-                                    st.markdown("#### 📋 Plan d'Action")
-                                    for action in actions:
-                                        priority = action.get('priority', 'LOW')
-                                        color = "🔴" if priority == 'HIGH' else "🟡" if priority == 'MEDIUM' else "🟢"
-                                        st.markdown(f"**{color} {action.get('action', 'Action')}**")
-                                        st.markdown(f"- Timeline: {action.get('timeline', 'N/A')}")
-                                        st.markdown(f"- Priorité: {priority}")
-                                        st.markdown("---")
-                                
-                                # Indicateurs de succès
-                                success_indicators = advanced_insights.get('success_indicators', {})
-                                if success_indicators:
-                                    st.markdown("#### 📊 Indicateurs de Succès")
-                                    primary_kpis = success_indicators.get('primary_kpis', {})
-                                    if primary_kpis:
-                                        st.markdown("**KPIs Principaux:**")
-                                        st.markdown(f"- {primary_kpis.get('check_reduction_target', 'N/A')}")
-                                        st.markdown(f"- {primary_kpis.get('service_adoption_target', 'N/A')}")
-                                        st.markdown(f"- Timeline: {primary_kpis.get('timeline', 'N/A')}")
-                                    
-                                    measurement_plan = success_indicators.get('measurement_plan', {})
-                                    if measurement_plan:
-                                        st.markdown("**Plan de Mesure:**")
-                                        st.markdown(f"- Fréquence: {measurement_plan.get('frequency', 'N/A')}")
-                                        st.markdown(f"- Points de Révision: {', '.join(measurement_plan.get('review_points', []))}")
-                        
-                        else:
-                            st.error(f"Erreur: {recommendations.get('error', 'Erreur inconnue')}")
+            # Manual input form (similar to prediction form)
+            with st.form("recommendation_manual_form"):
+                col1, col2 = st.columns(2)
+                
+                with col1:
+                    st.markdown("#### 📋 Informations Client")
+                    client_id = st.text_input("ID Client", value="nouveau_client_001")
+                    marche = st.selectbox("Marché", ["Particuliers", "PME", "TPE", "GEI", "TRE", "PRO"])
+                    csp = st.text_input("CSP", value="SALARIE CADRE MOYEN")
+                    segment = st.selectbox("Segment", ["S1 Excellence", "S2 Premium", "S3 Essentiel", "S4 Avenir", "S5 Univers", "NON SEGMENTE"])
+                    secteur = st.text_input("Secteur d'Activité", value="ADMINISTRATION PUBLIQUE")
                     
-                    except Exception as e:
-                        st.error(f"Erreur lors de la génération des recommandations: {e}")
-        
-        else:
-            st.warning("⚠️ Aucun dataset disponible. Veuillez d'abord exécuter le pipeline de données.")
+                with col2:
+                    st.markdown("#### 💰 Informations Financières")
+                    revenu = st.number_input("Revenu Estimé (TND)", min_value=0.0, value=50000.0)
+                    nbr_2024 = st.number_input("Nombre de Chèques 2024", min_value=0, value=5)
+                    montant_2024 = st.number_input("Montant Max Chèque 2024 (TND)", min_value=0.0, value=30000.0)
+                    nbr_transactions = st.number_input("Nombre de Transactions 2025", min_value=1, value=20)
+                    
+                col3, col4 = st.columns(2)
+                
+                with col3:
+                    st.markdown("#### 📊 Comportement")
+                    mobile_banking = st.checkbox("Utilise Mobile Banking")
+                    nb_methodes = st.number_input("Nombre de Méthodes de Paiement", min_value=1, value=3)
+                    ecart_cheques = st.number_input("Écart Chèques 2024→2025", value=-2)
+                    
+                with col4:
+                    st.markdown("#### 🔧 Autres")
+                    demande_derogation = st.checkbox("A Demandé une Dérogation")
+                    ecart_montant = st.number_input("Écart Montant Max 2024→2025", value=5000.0)
+                    ratio_cheques = st.slider("Ratio Paiements Chèques", 0.0, 1.0, 0.3)
+                
+                submitted_manual = st.form_submit_button("🎯 Générer Recommandations", use_container_width=True)
+                
+                if submitted_manual:
+                    # Prepare manual client data
+                    manual_client_data = {
+                        'CLI': client_id,
+                        'CLIENT_MARCHE': marche,
+                        'CSP': csp,
+                        'Segment_NMR': segment,
+                        'CLT_SECTEUR_ACTIVITE_LIB': secteur,
+                        'Revenu_Estime': revenu,
+                        'Nbr_Cheques_2024': nbr_2024,
+                        'Montant_Max_2024': montant_2024,
+                        'Nbr_Transactions_2025': nbr_transactions,
+                        'Ecart_Nbr_Cheques_2024_2025': ecart_cheques,
+                        'Ecart_Montant_Max_2024_2025': ecart_montant,
+                        'A_Demande_Derogation': int(demande_derogation),
+                        'Utilise_Mobile_Banking': int(mobile_banking),
+                        'Nombre_Methodes_Paiement': nb_methodes,
+                        'Ratio_Cheques_Paiements': ratio_cheques
+                    }
+                    
+                    with st.spinner("Génération des recommandations pour nouveau client..."):
+                        try:
+                            # Get recommendations for manual client data
+                            recommendations = st.session_state.recommendation_api.get_manual_client_recommendations(manual_client_data)
+                            display_recommendation_results(recommendations)
+                        except Exception as e:
+                            st.error(f"Erreur lors de la génération des recommandations: {e}")
+
+def display_recommendation_results(recommendations):
+    """Display recommendation results (shared function)."""
+    import streamlit as st
+    from src.utils.data_utils import format_currency_tnd
     
-    with tab2:
-        st.subheader("Analyse par Segment")
+    if recommendations.get('status') == 'success':
+        rec_data = recommendations['data']
         
-        # Segment selection
-        col1, col2 = st.columns(2)
+        # Display client info
+        st.markdown("### 📋 Informations Client")
+        col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            segment_filter = st.selectbox(
-                "Filtrer par Segment:",
-                options=['', 'S1 Excellence', 'S2 Premium', 'S3 Essentiel', 'S4 Avenir', 'S5 Univers', 'NON SEGMENTE', 'NON SEGMENTE CORPO', 'NOUVEAU CLIENT', 'CLIENT INACTIF', 'A Developper Flux', 'A Intensifier Engagements'],
-                index=0
-            )
+            behavior_segment = rec_data.get('behavior_profile', {}).get('behavior_segment', 'N/A')
+            st.metric("Segment Comportemental", behavior_segment)
         
         with col2:
-            market_filter = st.selectbox(
-                "Filtrer par Marché:",
-                options=['', 'Particuliers', 'PME', 'TPE', 'GEI', 'TRE', 'PRO'],
-                index=0
-            )
+            check_score = rec_data.get('behavior_profile', {}).get('check_dependency_score', 0)
+            st.metric("Dépendance Chèques", f"{check_score * 100:.1f}%")
         
-        if st.button("📊 Analyser le Segment", type="primary"):
-            with st.spinner("Analyse du segment..."):
-                try:
-                    segment_analysis = st.session_state.recommendation_api.get_segment_recommendations(
-                        segment_filter if segment_filter else None,
-                        market_filter if market_filter else None
-                    )
-                    
-                    if segment_analysis.get('status') == 'success':
-                        data = segment_analysis['data']
-                        
-                        st.markdown(f"### 📊 Analyse de {data['total_clients_analyzed']} clients")
-                        
-                        # Résumé par segment comportemental
-                        segment_summary = data.get('segment_summary', {})
-                        
-                        for behavior_segment, stats in segment_summary.items():
-                            with st.expander(f"📈 {behavior_segment} - {stats['count']} clients"):
-                                col1, col2 = st.columns(2)
-                                
-                                with col1:
-                                    st.metric("Taux d'Impact Moyen", f"{stats['avg_impact']:.1f}%")
-                                
-                                with col2:
-                                    st.metric("Nombre de Clients", stats['count'])
-                                
-                                # Services les plus recommandés
-                                st.markdown("**Services les plus recommandés:**")
-                                common_services = stats.get('common_services', {})
-                                for service, count in sorted(common_services.items(), key=lambda x: x[1], reverse=True)[:5]:
-                                    st.markdown(f"• {service}: {count} recommandations")
-                    
-                    else:
-                        st.error(f"Erreur: {segment_analysis.get('error', 'Erreur inconnue')}")
+        with col3:
+            digital_score = rec_data.get('behavior_profile', {}).get('digital_adoption_score', 0)
+            st.metric("Adoption Digitale", f"{digital_score * 100:.1f}%")
+        
+        with col4:
+            reduction_estimate = rec_data.get('impact_estimations', {}).get('pourcentage_reduction', 0)
+            st.metric("Réduction Estimée", f"{reduction_estimate:.1f}%")
+        
+        # Display recommendations
+        st.markdown("### 🎯 Recommandations Personnalisées")
+        
+        for i, rec in enumerate(rec_data.get('recommendations', [])):
+            with st.expander(f"📌 {rec.get('service_info', {}).get('nom', 'Service')} - Score: {rec.get('scores', {}).get('global', 0):.2f}"):
+                service_info = rec.get('service_info', {})
                 
-                except Exception as e:
-                    st.error(f"Erreur lors de l'analyse du segment: {e}")
+                st.markdown(f"**Description:** {service_info.get('description', 'N/A')}")
+                st.markdown(f"**Objectif:** {service_info.get('cible', 'N/A')}")
+                st.markdown(f"**Coût:** {format_currency_tnd(service_info.get('cout', 0), 0)}")
+                
+                # Avantages
+                avantages = service_info.get('avantages', [])
+                if avantages:
+                    st.markdown("**Avantages:**")
+                    for avantage in avantages:
+                        st.markdown(f"• {avantage}")
+                
+                # Scores détaillés
+                scores = rec.get('scores', {})
+                col1, col2, col3 = st.columns(3)
+                with col1:
+                    st.metric("Score de Base", f"{scores.get('base', 0):.2f}")
+                with col2:
+                    st.metric("Score d'Urgence", f"{scores.get('urgency', 0):.2f}")
+                with col3:
+                    st.metric("Score de Faisabilité", f"{scores.get('feasibility', 0):.2f}")
+                
+                # Note sur l'adoption (pas de bouton dans le contexte des recommandations)
+                st.markdown("💡 **Note:** Ce service peut être proposé au client pour adoption")
+                if rec.get('service_info', {}).get('cout', 0) == 0:
+                    st.markdown("🆓 **Service gratuit** - Facilité d'adoption élevée")
+                else:
+                    cout = rec.get('service_info', {}).get('cout', 0)
+                    st.markdown(f"💰 **Service premium** - {format_currency_tnd(cout, 0)}/an")
+        
+        # Impact estimé
+        st.markdown("### 📈 Impact Estimé")
+        impact = rec_data.get('impact_estimations', {})
+        
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            st.metric("Réduction Chèques", f"{impact.get('reduction_cheques_estimee', 0):.1f}")
+        with col2:
+            st.metric("Pourcentage Réduction", f"{impact.get('pourcentage_reduction', 0):.1f}%")
+        with col3:
+            st.metric("Bénéfice Estimé", format_currency_tnd(impact.get('benefice_bancaire_estime', 0)))
+        
+        # Détails financiers
+        if impact.get('economies_operationnelles', 0) > 0:
+            col1, col2 = st.columns(2)
+            with col1:
+                st.metric("Économies Opérationnelles", format_currency_tnd(impact.get('economies_operationnelles', 0)))
+            with col2:
+                st.metric("Revenus Additionnels", format_currency_tnd(impact.get('revenus_additionnels', 0)))
     
-    with tab3:
-        st.subheader("Profil Détaillé d'un Client")
-        
-        if st.session_state.dataset is not None:
-            client_ids = st.session_state.dataset['CLI'].unique()
-            selected_client = st.selectbox(
-                "Sélectionnez un client pour l'analyse:",
-                options=client_ids,
-                key="profile_client"
-            )
-            
-            if st.button("🔍 Analyser le Profil", type="primary"):
-                with st.spinner("Analyse du profil client..."):
-                    try:
-                        profile_analysis = st.session_state.recommendation_api.get_client_profile_analysis(selected_client)
-                        
-                        if profile_analysis.get('status') == 'success':
-                            data = profile_analysis['data']
-                            
-                            # Informations de base
-                            st.markdown("### 📋 Informations de Base")
-                            basic_info = data.get('basic_info', {})
-                            
-                            col1, col2, col3 = st.columns(3)
-                            with col1:
-                                st.metric("Marché", basic_info.get('marche', 'N/A'))
-                            with col2:
-                                st.metric("Segment", basic_info.get('segment', 'N/A'))
-                            with col3:
-                                st.metric("Revenu Estimé", format_currency_tnd(basic_info.get('revenu_estime', 0), 0))
-                            
-                            # Profil comportemental
-                            st.markdown("### 🎯 Profil Comportemental")
-                            behavior_profile = data.get('behavior_profile', {})
-                            
-                            col1, col2, col3, col4 = st.columns(4)
-                            with col1:
-                                st.metric("Dépendance Chèques", f"{behavior_profile.get('check_dependency_score', 0) * 100:.1f}%")
-                            with col2:
-                                st.metric("Adoption Digitale", f"{behavior_profile.get('digital_adoption_score', 0) * 100:.1f}%")
-                            with col3:
-                                st.metric("Évolution Paiements", f"{behavior_profile.get('payment_evolution_score', 0) * 100:.1f}%")
-                            with col4:
-                                st.metric("Profil de Risque", f"{behavior_profile.get('risk_profile_score', 0) * 100:.1f}%")
-                            
-                            # Comparaison avec les pairs
-                            st.markdown("### 📊 Comparaison avec les Pairs")
-                            peer_comparison = data.get('peer_comparison', {})
-                            
-                            if 'error' not in peer_comparison:
-                                st.markdown(f"**Nombre de pairs:** {peer_comparison.get('peer_count', 0)}")
-                                
-                                metric_comparisons = peer_comparison.get('metric_comparisons', {})
-                                for metric, stats in metric_comparisons.items():
-                                    with st.expander(f"📈 {metric}"):
-                                        col1, col2, col3 = st.columns(3)
-                                        with col1:
-                                            st.metric("Valeur Client", f"{stats.get('client_value', 0):.1f}")
-                                        with col2:
-                                            st.metric("Moyenne Pairs", f"{stats.get('peer_mean', 0):.1f}")
-                                        with col3:
-                                            st.metric("Rang Percentile", f"{stats.get('percentile_rank', 0):.1f}%")
-                        
-                        else:
-                            st.error(f"Erreur: {profile_analysis.get('error', 'Erreur inconnue')}")
-                    
-                    except Exception as e:
-                        st.error(f"Erreur lors de l'analyse du profil: {e}")
-        
-        else:
-            st.warning("⚠️ Aucun dataset disponible.")
-    
-    with tab4:
-        st.subheader("Gestion des Services")
-        
-        # Services disponibles
-        services_info = st.session_state.recommendation_api.get_available_services()
-        
-        if services_info.get('status') == 'success':
-            services = services_info['data']['services']
-            
-            st.markdown("### 🛠️ Services Disponibles")
-            
-            for service_id, service_info in services.items():
-                with st.expander(f"🔧 {service_info['nom']}"):
-                    st.markdown(f"**Description:** {service_info['description']}")
-                    st.markdown(f"**Coût:** {format_currency_tnd(service_info['cout'], 0)}")
-                    st.markdown(f"**Objectif:** {service_info['cible']}")
-                    
-                    # Avantages
-                    avantages = service_info.get('avantages', [])
-                    if avantages:
-                        st.markdown("**Avantages:**")
-                        for avantage in avantages:
-                            st.markdown(f"• {avantage}")
-        
-        # Segments comportementaux
-        st.markdown("### 🎯 Segments Comportementaux")
-        segments_info = st.session_state.recommendation_api.get_behavior_segments()
-        
-        if segments_info.get('status') == 'success':
-            segments = segments_info['data']['segments']
-            
-            for segment_id, segment_info in segments.items():
-                with st.expander(f"👥 {segment_id}"):
-                    st.markdown(f"**Description:** {segment_info['description']}")
-                    st.markdown(f"**Approche:** {segment_info['approach']}")
-                    
-                    # Caractéristiques
-                    characteristics = segment_info.get('characteristics', [])
-                    if characteristics:
-                        st.markdown("**Caractéristiques:**")
-                        for char in characteristics:
-                            st.markdown(f"• {char}")
+    else:
+        st.error(f"Erreur: {recommendations.get('error', 'Erreur inconnue')}")
 
 def show_recommendation_analytics_page():
     """Display the recommendation analytics page."""
