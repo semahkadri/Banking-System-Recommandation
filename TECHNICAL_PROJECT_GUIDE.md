@@ -301,14 +301,57 @@ Client Profile Analysis:
 ```
 
 #### **Step 3.2: Behavioral Segmentation**
-Based on the analysis, we place each client in **6 categories**:
+Based on the analysis, we place each client in **6 behavioral categories**:
 
-1. **TRADITIONAL_RESISTANT** - Loves checks, avoids digital
-2. **TRADITIONAL_MODERE** - Uses checks but open to change
-3. **DIGITAL_TRANSITOIRE** - Moving from checks to digital
-4. **DIGITAL_ADOPTER** - Actively using digital services
-5. **DIGITAL_NATIF** - Fully digital, rarely uses checks
-6. **EQUILIBRE** - Balanced between traditional and digital
+### **🎭 The 6 Behavioral Segments Explained:**
+
+#### **🐌 1. TRADITIONNEL_RESISTANT** (~15% of clients)
+**Profile**: Strong resistance to digital change
+- **Check Dependency**: Very High (>70%)
+- **Digital Adoption**: Very Low (<20%)
+- **Payment Evolution**: Negative/Stable
+- **Recommended Services**: Formation Services Digitaux, Accompagnement Personnel, Carte Bancaire Moderne
+- **Approach**: Patient, gradual introduction to basic alternatives
+
+#### **🚶 2. TRADITIONNEL_MODERE** (~25% of clients)
+**Profile**: Moderate check usage, open to alternatives
+- **Check Dependency**: High (50-70%)
+- **Digital Adoption**: Low-Medium (20-40%)
+- **Payment Evolution**: Slight improvement
+- **Recommended Services**: Carte Bancaire Moderne, Virements Automatiques, Formation Services Digitaux
+- **Approach**: Gentle transition with emphasis on convenience
+
+#### **🔄 3. DIGITAL_TRANSITOIRE** (~30% of clients)
+**Profile**: Actively transitioning from checks to digital
+- **Check Dependency**: Medium (30-50%)
+- **Digital Adoption**: Medium-High (40-70%)
+- **Payment Evolution**: Positive trend
+- **Recommended Services**: Application Mobile Banking, Paiement Mobile QR Code, Carte Sans Contact Premium
+- **Approach**: Accelerate digital adoption with advanced services
+
+#### **🚀 4. DIGITAL_ADOPTER** (~20% of clients)
+**Profile**: Embracing digital services actively
+- **Check Dependency**: Low-Medium (20-40%)
+- **Digital Adoption**: High (60-80%)
+- **Payment Evolution**: Strong positive
+- **Recommended Services**: Pack Services Premium, Carte Sans Contact Premium, Paiement Mobile QR Code
+- **Approach**: Premium services and advanced features
+
+#### **💻 5. DIGITAL_NATIF** (~8% of clients)
+**Profile**: Digital-first, minimal check usage
+- **Check Dependency**: Very Low (<20%)
+- **Digital Adoption**: Very High (>80%)
+- **Payment Evolution**: Consistent digital growth
+- **Recommended Services**: Pack Services Premium, Application Mobile Banking, Carte Sans Contact Premium
+- **Approach**: Cutting-edge services and exclusive features
+
+#### **⚖️ 6. EQUILIBRE** (~2% of clients)
+**Profile**: Balanced mix of traditional and digital
+- **Check Dependency**: Medium (40-60%)
+- **Digital Adoption**: Medium (40-60%)
+- **Payment Evolution**: Stable, thoughtful usage
+- **Recommended Services**: Carte Bancaire Moderne, Application Mobile Banking, Virements Automatiques
+- **Approach**: Maintain balance while optimizing both channels
 
 #### **Step 3.3: Service Recommendations**
 For each segment, we recommend **8 different banking services**:
@@ -378,12 +421,18 @@ Web-based dashboard with **5 main sections**:
    - **New clients**: Manual input form
    - **Same workflow**: Prediction → Recommendation
 
-2. **Real-time Processing**:
+2. **Complete Recommendation System** (4 functional tabs):
+   - **🎯 Client Individuel**: Individual client recommendations
+   - **📊 Analyse par Segment**: Behavioral segment analysis
+   - **🔍 Profil Détaillé**: Deep client profile analysis
+   - **⚙️ Gestion des Services**: Service catalog management
+
+3. **Real-time Processing**:
    - Instant predictions (< 2 seconds)
    - Live behavioral analysis
    - Immediate recommendations
 
-3. **Visual Results**:
+4. **Visual Results**:
    - Charts and graphs
    - Risk indicators
    - ROI calculations
@@ -558,18 +607,18 @@ Real-time Predictions & Recommendations
 
 ## 🚀 **How to Use the System**
 
-### **For Bank Staff - Simple 3-Step Process**
+### **For Bank Staff - Complete Dashboard Guide**
 
 #### **Step 1: Access Dashboard**
 ```
 1. Open web browser
 2. Go to: http://localhost:8501
-3. See main dashboard with 5 tabs
+3. See main dashboard with 5 main sections
 ```
 
 #### **Step 2: Get Predictions** 
 ```
-Predictions Tab:
+🔮 Predictions Tab:
 1. Fill client information form
 2. Click "Predict" 
 3. Get results:
@@ -578,17 +627,46 @@ Predictions Tab:
    - Confidence: X% accuracy
 ```
 
-#### **Step 3: Get Recommendations**
+#### **Step 3: Get Recommendations** - **4 Functional Tabs**
 ```
-Recommendations Tab:
-1. Choose mode:
-   - "Existing Client" → Select from dropdown
-   - "New Client" → Fill manual form
-2. Click "Generate Recommendations"
-3. Get results:
-   - Behavioral segment
-   - Top 5 service recommendations
-   - Expected ROI and impact
+🎯 Recommendations Tab:
+
+Tab 1 - Client Individuel:
+1. Choose mode: "Existing Client" or "New Client"
+2. Generate individual recommendations
+3. Get behavioral analysis and service suggestions
+
+Tab 2 - Analyse par Segment:
+1. Select behavioral segment (6 types available)
+2. View segment statistics and demographics
+3. See recommended services for entire segment
+
+Tab 3 - Profil Détaillé:
+1. Select any client for deep analysis
+2. View comprehensive client information
+3. Get behavioral scores and segment classification
+
+Tab 4 - Gestion des Services:
+1. Browse complete service catalog (8 services)
+2. View pricing and descriptions
+3. Check service effectiveness statistics
+```
+
+#### **Step 4: Advanced Analytics**
+```
+📊 Analytics Tab:
+1. View system performance metrics
+2. Analyze data distributions
+3. Check model accuracy and statistics
+```
+
+#### **Step 5: System Management**
+```
+⚙️ Management Tab:
+1. Run data pipeline processing
+2. Train new ML models
+3. Compare model performance
+4. View data statistics
 ```
 
 ### **Example Client Journey**

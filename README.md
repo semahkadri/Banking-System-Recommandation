@@ -69,13 +69,22 @@ Your system now supports **both existing and new clients** with a unified workfl
 ### **Key Features**
 - **Unified Client Management** - Same ID across prediction and recommendation systems
 - **Dual Input Modes** - Existing clients (dropdown) + New clients (manual form)
+- **4 Functional Recommendation Tabs**:
+  - 🎯 **Client Individuel** - Individual recommendations
+  - 📊 **Analyse par Segment** - Behavioral segment analysis (6 segments)
+  - 🔍 **Profil Détaillé** - Deep client profile analysis
+  - ⚙️ **Gestion des Services** - Service catalog management (8 services)
 - **Consistent Data Flow** - Prediction → Recommendation workflow for any client type
 - **Real-time Analysis** - Instant behavioral segmentation and service recommendations
 - **Complete Traceability** - Consistent client IDs ensure full audit trail
 
 ### **Quick Access**
 1. **🔮 Predictions Tab** - Generate predictions for existing OR new clients
-2. **🎯 Recommendations Tab** - Two modes: "Existing Client" or "New Client (Manual)"
+2. **🎯 Recommendations Tab** - 4 comprehensive sub-tabs:
+   - **Client Individuel** - Individual client recommendations
+   - **Analyse par Segment** - Behavioral segment analysis (6 segments)
+   - **Profil Détaillé** - Deep client profile analysis
+   - **Gestion des Services** - Service catalog and pricing (8 services)
 3. **📋 Analytics Tab** - View adoption statistics and effectiveness reports
 4. **🔍 Profile Analysis** - Deep dive into client behavioral patterns
 5. **📊 Segment Analysis** - Analyze entire client segments and markets

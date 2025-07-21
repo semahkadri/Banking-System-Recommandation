@@ -7799,5 +7799,684 @@
       }
     },
     "status": "GENERATED"
+  },
+  {
+    "client_id": "nouveau_client_001",
+    "timestamp": "2025-07-21T19:56:05.739898",
+    "recommendations": {
+      "client_id": "nouveau_client_001",
+      "behavior_profile": {
+        "check_dependency_score": 0.5,
+        "digital_adoption_score": 0.4,
+        "payment_evolution_score": 0.4,
+        "risk_profile_score": 0.6,
+        "behavior_segment": "TRADITIONNEL_MODERE"
+      },
+      "recommendations": [
+        {
+          "service_id": "carte_bancaire",
+          "service_info": {
+            "nom": "Carte Bancaire Moderne",
+            "description": "Carte avec technologie sans contact et contr\u00f4le mobile",
+            "avantages": [
+              "Paiements rapides",
+              "S\u00e9curit\u00e9 renforc\u00e9e",
+              "Contr\u00f4le temps r\u00e9el"
+            ],
+            "cible": "Remplace progressivement les ch\u00e8ques",
+            "cout": 0
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.5,
+            "feasibility": 0.8300000000000001,
+            "global": 0.8160000000000001
+          }
+        },
+        {
+          "service_id": "virement_automatique",
+          "service_info": {
+            "nom": "Virements Automatiques",
+            "description": "Automatisation des paiements r\u00e9currents",
+            "avantages": [
+              "Pas d'oubli",
+              "\u00c9conomie de temps",
+              "R\u00e9duction des frais"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents",
+            "cout": 0
+          },
+          "scores": {
+            "base": 0.95,
+            "urgency": 0.5,
+            "feasibility": 0.8300000000000001,
+            "global": 0.791
+          }
+        },
+        {
+          "service_id": "formation_digital",
+          "service_info": {
+            "nom": "Formation Services Digitaux",
+            "description": "Accompagnement personnalis\u00e9 vers le digital",
+            "avantages": [
+              "Formation gratuite",
+              "Support d\u00e9di\u00e9",
+              "Transition accompagn\u00e9e"
+            ],
+            "cible": "Adoption progressive des alternatives",
+            "cout": 0
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.5,
+            "feasibility": 0.8300000000000001,
+            "global": 0.766
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 2.7685000000000004,
+        "pourcentage_reduction": 55.370000000000005,
+        "impacts_par_service": {
+          "carte_bancaire": {
+            "reduction_estimee": 1.02,
+            "score_adoption": 0.8160000000000001,
+            "impact_financier": {
+              "economies_frais": 4.59,
+              "revenus_service": 11.016,
+              "impact_net": 6.426
+            }
+          },
+          "virement_automatique": {
+            "reduction_estimee": 0.791,
+            "score_adoption": 0.791,
+            "impact_financier": {
+              "economies_frais": 3.5595000000000003,
+              "revenus_service": 5.6952,
+              "impact_net": 2.1356999999999995
+            }
+          },
+          "formation_digital": {
+            "reduction_estimee": 0.9575,
+            "score_adoption": 0.766,
+            "impact_financier": {
+              "economies_frais": 4.30875,
+              "revenus_service": 0.0,
+              "impact_net": -4.30875
+            }
+          }
+        },
+        "benefice_bancaire_estime": 29.169449999999998,
+        "economies_operationnelles": 12.458250000000001,
+        "revenus_additionnels": 16.711199999999998
+      },
+      "generation_timestamp": "2025-07-21T19:56:05.733894",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "stable",
+          "check_usage_6m": 5.0,
+          "check_usage_12m": 5.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client core avec besoins standards",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Transition progressive vers les services modernes"
+        },
+        "value_potential": {
+          "total_value_potential": 479.16945,
+          "cost_savings": 12.458250000000001,
+          "service_revenues": 16.711199999999998,
+          "cross_sell_potential": 250.0,
+          "retention_value": 200.0,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 2 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "nouveau_client_001",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 25000.0,
+            "recommended_check_count": 37,
+            "current_usage": 5.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      },
+      "data_source": "manual_input"
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "0013d624",
+    "timestamp": "2025-07-21T19:56:30.152640",
+    "recommendations": {
+      "client_id": "0013d624",
+      "behavior_profile": {
+        "check_dependency_score": 0.0,
+        "digital_adoption_score": 0.4,
+        "payment_evolution_score": 0.5,
+        "risk_profile_score": 0.5,
+        "behavior_segment": "EQUILIBRE"
+      },
+      "recommendations": [
+        {
+          "service_id": "mobile_banking",
+          "service_info": {
+            "nom": "Application Mobile Banking",
+            "description": "Gestion compl\u00e8te de vos comptes depuis votre smartphone",
+            "avantages": [
+              "Virements instantan\u00e9s",
+              "Suivi temps r\u00e9el",
+              "Notifications"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques",
+            "cout": 0
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.5,
+            "feasibility": 0.8600000000000001,
+            "global": 0.772
+          }
+        },
+        {
+          "service_id": "carte_bancaire",
+          "service_info": {
+            "nom": "Carte Bancaire Moderne",
+            "description": "Carte avec technologie sans contact et contr\u00f4le mobile",
+            "avantages": [
+              "Paiements rapides",
+              "S\u00e9curit\u00e9 renforc\u00e9e",
+              "Contr\u00f4le temps r\u00e9el"
+            ],
+            "cible": "Remplace progressivement les ch\u00e8ques",
+            "cout": 0
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.5,
+            "feasibility": 0.8600000000000001,
+            "global": 0.7220000000000001
+          }
+        },
+        {
+          "service_id": "virement_automatique",
+          "service_info": {
+            "nom": "Virements Automatiques",
+            "description": "Automatisation des paiements r\u00e9currents",
+            "avantages": [
+              "Pas d'oubli",
+              "\u00c9conomie de temps",
+              "R\u00e9duction des frais"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents",
+            "cout": 0
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.5,
+            "feasibility": 0.8600000000000001,
+            "global": 0.672
+          }
+        },
+        {
+          "service_id": "services_premium",
+          "service_info": {
+            "nom": "Pack Services Premium",
+            "description": "Ensemble de services bancaires avanc\u00e9s",
+            "avantages": [
+              "Conseiller d\u00e9di\u00e9",
+              "Frais r\u00e9duits",
+              "Services prioritaires"
+            ],
+            "cible": "Optimisation compl\u00e8te des services",
+            "cout": 600
+          },
+          "scores": {
+            "base": 0.5815206699607985,
+            "urgency": 0.5,
+            "feasibility": 0.6036140502470599,
+            "global": 0.5614831450298112
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 51.2998651602385,
+        "impacts_par_service": {
+          "mobile_banking": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.772,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "carte_bancaire": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.7220000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "virement_automatique": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.672,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "services_premium": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.5614831450298112,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-21T19:56:30.123440",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "stable",
+          "check_usage_6m": 0.0,
+          "check_usage_12m": 0.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client jeune avec potentiel de croissance",
+          "priority_services": [
+            "mobile_banking",
+            "paiement_mobile"
+          ],
+          "approach": "\u00c9ducation financi\u00e8re et services digitaux"
+        },
+        "value_potential": {
+          "total_value_potential": 785.0529044470779,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 436.1405024705989,
+          "retention_value": 348.9124019764791,
+          "value_category": "MEDIUM"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "0013d624",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 20000.0,
+            "recommended_check_count": 30,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "MOD\u00c9R\u00c9",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "001fc661",
+    "timestamp": "2025-07-21T20:01:51.546661",
+    "recommendations": {
+      "client_id": "001fc661",
+      "behavior_profile": {
+        "check_dependency_score": 0.16,
+        "digital_adoption_score": 0.4,
+        "payment_evolution_score": 0.8999999999999999,
+        "risk_profile_score": 0.4,
+        "behavior_segment": "EQUILIBRE"
+      },
+      "recommendations": [
+        {
+          "service_id": "carte_bancaire",
+          "service_info": {
+            "nom": "Carte Bancaire Moderne",
+            "description": "Carte avec technologie sans contact et contr\u00f4le mobile",
+            "avantages": [
+              "Paiements rapides",
+              "S\u00e9curit\u00e9 renforc\u00e9e",
+              "Contr\u00f4le temps r\u00e9el"
+            ],
+            "cible": "Remplace progressivement les ch\u00e8ques",
+            "cout": 0
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.87
+          }
+        },
+        {
+          "service_id": "virement_automatique",
+          "service_info": {
+            "nom": "Virements Automatiques",
+            "description": "Automatisation des paiements r\u00e9currents",
+            "avantages": [
+              "Pas d'oubli",
+              "\u00c9conomie de temps",
+              "R\u00e9duction des frais"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents",
+            "cout": 0
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.87
+          }
+        },
+        {
+          "service_id": "mobile_banking",
+          "service_info": {
+            "nom": "Application Mobile Banking",
+            "description": "Gestion compl\u00e8te de vos comptes depuis votre smartphone",
+            "avantages": [
+              "Virements instantan\u00e9s",
+              "Suivi temps r\u00e9el",
+              "Notifications"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques",
+            "cout": 0
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.8200000000000001
+          }
+        },
+        {
+          "service_id": "services_premium",
+          "service_info": {
+            "nom": "Pack Services Premium",
+            "description": "Ensemble de services bancaires avanc\u00e9s",
+            "avantages": [
+              "Conseiller d\u00e9di\u00e9",
+              "Frais r\u00e9duits",
+              "Services prioritaires"
+            ],
+            "cible": "Optimisation compl\u00e8te des services",
+            "cout": 600
+          },
+          "scores": {
+            "base": 0.8548268400714427,
+            "urgency": 0.7,
+            "feasibility": 0.5641120130053582,
+            "global": 0.750235822636793
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 3.6169131948656608,
+        "pourcentage_reduction": 60.28188658109435,
+        "impacts_par_service": {
+          "carte_bancaire": {
+            "reduction_estimee": 1.044,
+            "score_adoption": 0.87,
+            "impact_financier": {
+              "economies_frais": 4.698,
+              "revenus_service": 11.275200000000002,
+              "impact_net": 6.577200000000001
+            }
+          },
+          "virement_automatique": {
+            "reduction_estimee": 0.8352000000000002,
+            "score_adoption": 0.87,
+            "impact_financier": {
+              "economies_frais": 3.758400000000001,
+              "revenus_service": 6.013440000000001,
+              "impact_net": 2.25504
+            }
+          },
+          "mobile_banking": {
+            "reduction_estimee": 1.3776,
+            "score_adoption": 0.8200000000000001,
+            "impact_financier": {
+              "economies_frais": 6.199199999999999,
+              "revenus_service": 4.95936,
+              "impact_net": -1.2398399999999992
+            }
+          },
+          "services_premium": {
+            "reduction_estimee": 0.3601131948656607,
+            "score_adoption": 0.750235822636793,
+            "impact_financier": {
+              "economies_frais": 1.620509376895473,
+              "revenus_service": 64.82037507581893,
+              "impact_net": 63.19986569892346
+            }
+          }
+        },
+        "benefice_bancaire_estime": 103.34448445271441,
+        "economies_operationnelles": 16.276109376895473,
+        "revenus_additionnels": 87.06837507581893
+      },
+      "generation_timestamp": "2025-07-21T20:01:51.475050",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Usage mod\u00e9r\u00e9 des ch\u00e8ques - Transition progressive recommand\u00e9e",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 4.0,
+          "check_usage_12m": 3.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Segment non identifi\u00e9",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Approche standard avec \u00e9valuation approfondie"
+        },
+        "value_potential": {
+          "total_value_potential": 1003.3444844527144,
+          "cost_savings": 16.276109376895473,
+          "service_revenues": 87.06837507581893,
+          "cross_sell_potential": 500.0,
+          "retention_value": 400.0,
+          "value_category": "HIGH"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 2 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "001fc661",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 6.0,
+            "usage_efficiency": "NON APPLICABLE"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client non segment\u00e9 - \u00e9ligibilit\u00e9 refus\u00e9e"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
   }
 ]

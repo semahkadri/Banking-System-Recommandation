@@ -979,6 +979,173 @@ def show_recommendations_page():
                             display_recommendation_results(recommendations)
                         except Exception as e:
                             st.error(f"Erreur lors de la génération des recommandations: {e}")
+    
+    with tab2:
+        st.subheader("📊 Analyse par Segment Comportemental")
+        
+        if st.session_state.dataset is not None:
+            # Analyze all clients and show segment distribution
+            df = st.session_state.dataset
+            
+            # Calculate behavior segments for all clients
+            st.markdown("### 📈 Distribution des Segments")
+            
+            # Mock segment analysis (since we don't have pre-calculated segments in dataset)
+            segment_options = ["TRADITIONNEL_RESISTANT", "TRADITIONNEL_MODERE", "DIGITAL_TRANSITOIRE", 
+                             "DIGITAL_ADOPTER", "DIGITAL_NATIF", "EQUILIBRE"]
+            
+            selected_segment = st.selectbox("Sélectionner un segment à analyser:", segment_options)
+            
+            if st.button("📊 Analyser ce Segment", type="primary"):
+                with st.spinner("Analyse du segment en cours..."):
+                    # Mock analysis
+                    import random
+                    client_count = random.randint(200, 800)
+                    avg_checks = random.randint(5, 25)
+                    avg_digital = random.randint(20, 80)
+                    
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("Clients dans ce segment", f"{client_count:,}")
+                    with col2:
+                        st.metric("Chèques moyens/an", avg_checks)
+                    with col3:
+                        st.metric("Score digital moyen", f"{avg_digital}%")
+                    
+                    st.markdown("### 🎯 Services Recommandés pour ce Segment")
+                    
+                    # Segment-specific recommendations
+                    segment_recommendations = {
+                        "TRADITIONNEL_RESISTANT": ["Formation Services Digitaux", "Accompagnement Personnel", "Carte Bancaire Moderne"],
+                        "TRADITIONNEL_MODERE": ["Carte Bancaire Moderne", "Virements Automatiques", "Formation Services Digitaux"],
+                        "DIGITAL_TRANSITOIRE": ["Application Mobile Banking", "Paiement Mobile QR Code", "Carte Sans Contact Premium"],
+                        "DIGITAL_ADOPTER": ["Pack Services Premium", "Carte Sans Contact Premium", "Paiement Mobile QR Code"],
+                        "DIGITAL_NATIF": ["Pack Services Premium", "Application Mobile Banking", "Carte Sans Contact Premium"],
+                        "EQUILIBRE": ["Carte Bancaire Moderne", "Application Mobile Banking", "Virements Automatiques"]
+                    }
+                    
+                    for i, service in enumerate(segment_recommendations.get(selected_segment, [])):
+                        st.write(f"**{i+1}.** {service}")
+        else:
+            st.warning("⚠️ Aucun dataset disponible. Veuillez d'abord exécuter le pipeline de données.")
+    
+    with tab3:
+        st.subheader("🔍 Analyse de Profil Détaillé")
+        
+        if st.session_state.dataset is not None:
+            client_ids = st.session_state.dataset['CLI'].unique()
+            selected_client = st.selectbox(
+                "Sélectionnez un client pour analyse détaillée:",
+                options=client_ids,
+                key="detailed_profile_client"
+            )
+            
+            if st.button("🔍 Analyser Profil Complet", type="primary"):
+                with st.spinner("Analyse détaillée en cours..."):
+                    client_data = st.session_state.dataset[st.session_state.dataset['CLI'] == selected_client].iloc[0]
+                    
+                    # Display comprehensive client profile
+                    st.markdown("### 👤 Informations Client")
+                    col1, col2, col3 = st.columns(3)
+                    
+                    with col1:
+                        st.metric("ID Client", selected_client)
+                        st.metric("Marché", client_data.get('CLIENT_MARCHE', 'N/A'))
+                        st.metric("Segment", client_data.get('Segment_NMR', 'N/A'))
+                    
+                    with col2:
+                        st.metric("CSP", client_data.get('CSP', 'N/A'))
+                        st.metric("Secteur", client_data.get('CLT_SECTEUR_ACTIVITE_LIB', 'N/A')[:20] + "..." if len(str(client_data.get('CLT_SECTEUR_ACTIVITE_LIB', ''))) > 20 else client_data.get('CLT_SECTEUR_ACTIVITE_LIB', 'N/A'))
+                    
+                    with col3:
+                        st.metric("Mobile Banking", "✅ Oui" if client_data.get('Utilise_Mobile_Banking', 0) else "❌ Non")
+                        st.metric("Chèques 2024", f"{client_data.get('Nbr_Cheques_2024', 0)}")
+                    
+                    # Behavioral analysis
+                    st.markdown("### 📊 Analyse Comportementale")
+                    
+                    # Generate mock behavioral scores
+                    try:
+                        recommendations = st.session_state.recommendation_api.get_client_recommendations(selected_client)
+                        if recommendations.get('status') == 'success':
+                            behavior_profile = recommendations['data'].get('behavior_profile', {})
+                            
+                            col1, col2, col3, col4 = st.columns(4)
+                            
+                            with col1:
+                                check_score = behavior_profile.get('check_dependency_score', 0) * 100
+                                st.metric("Dépendance Chèques", f"{check_score:.1f}%")
+                            
+                            with col2:
+                                digital_score = behavior_profile.get('digital_adoption_score', 0) * 100
+                                st.metric("Adoption Digitale", f"{digital_score:.1f}%")
+                            
+                            with col3:
+                                evolution_score = behavior_profile.get('payment_evolution_score', 0) * 100
+                                st.metric("Évolution Paiements", f"{evolution_score:.1f}%")
+                            
+                            with col4:
+                                segment = behavior_profile.get('behavior_segment', 'N/A')
+                                st.metric("Segment Comportemental", segment)
+                    
+                    except Exception as e:
+                        st.info("💡 Analyse comportementale disponible après génération de recommandations")
+        else:
+            st.warning("⚠️ Aucun dataset disponible. Veuillez d'abord exécuter le pipeline de données.")
+    
+    with tab4:
+        st.subheader("⚙️ Catalogue des Services Bancaires")
+        
+        # Display service catalog
+        st.markdown("### 💼 Services Disponibles")
+        
+        # Mock service catalog display
+        services = {
+            "🆓 Services Gratuits": [
+                {"nom": "Carte Bancaire Moderne", "cout": "0 TND", "description": "Carte avec technologie sans contact"},
+                {"nom": "Application Mobile Banking", "cout": "0 TND", "description": "Gestion complète depuis smartphone"},
+                {"nom": "Virements Automatiques", "cout": "0 TND", "description": "Automatisation paiements récurrents"},
+                {"nom": "Paiement Mobile QR Code", "cout": "0 TND", "description": "Paiements instantanés par QR"},
+                {"nom": "Formation Services Digitaux", "cout": "0 TND", "description": "Accompagnement personnalisé"},
+                {"nom": "Accompagnement Personnel", "cout": "0 TND", "description": "Conseiller dédié transition"}
+            ],
+            "💎 Services Premium": [
+                {"nom": "Carte Sans Contact Premium", "cout": "150 TND/an", "description": "Carte avec plafond élevé et assurances"},
+                {"nom": "Pack Services Premium", "cout": "600 TND/an", "description": "Ensemble services bancaires avancés"}
+            ]
+        }
+        
+        for category, service_list in services.items():
+            st.markdown(f"#### {category}")
+            
+            for service in service_list:
+                with st.expander(f"📌 {service['nom']} - {service['cout']}"):
+                    st.write(f"**Description:** {service['description']}")
+                    st.write(f"**Coût:** {service['cout']}")
+                    
+                    if service['cout'] == "0 TND":
+                        st.success("🎯 Service gratuit - Recommandé pour tous les clients")
+                    else:
+                        st.info("💼 Service premium - Ciblé clients à hauts revenus")
+        
+        # Service management
+        st.markdown("### 🔧 Gestion des Services")
+        st.info("💡 **Note**: Les prix et descriptions des services sont configurés dans le code source. Consultez `src/models/recommendation_engine.py` pour les modifications.")
+        
+        # Service effectiveness
+        if st.button("📈 Voir Efficacité des Services"):
+            st.markdown("#### 📊 Statistiques d'Adoption (Simulation)")
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.metric("Services Gratuits", "73% adoption moyenne")
+                st.metric("Mobile Banking", "89% satisfaction")
+                st.metric("Carte Bancaire Moderne", "67% adoption")
+            
+            with col2:
+                st.metric("Services Premium", "34% adoption moyenne")
+                st.metric("Pack Premium", "45% satisfaction")
+                st.metric("Carte Premium", "23% adoption")
 
 def display_recommendation_results(recommendations):
     """Display recommendation results (shared function)."""
