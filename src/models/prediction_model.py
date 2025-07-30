@@ -533,7 +533,7 @@ class CheckPredictionModel:
         self.is_trained = True
     
     def predict(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
-        """Make predictions for a client."""
+        """Make predictions for a client with improved logic and validation."""
         if not self.is_trained:
             raise ValueError("Model must be trained before making predictions")
         
@@ -543,23 +543,251 @@ class CheckPredictionModel:
         # Prepare features
         X, _, _ = self._prepare_features([client_data])
         
-        # Make predictions
-        nbr_pred = self.nbr_cheques_model.predict(X)[0]
-        montant_pred = self.montant_max_model.predict(X)[0]
+        # Make raw predictions
+        nbr_pred_raw = self.nbr_cheques_model.predict(X)[0]
+        montant_pred_raw = self.montant_max_model.predict(X)[0]
         
-        # Ensure positive predictions
-        nbr_pred = max(0, round(nbr_pred))
-        montant_pred = max(0, montant_pred)
+        # Apply business logic validation and correction
+        nbr_pred = self._validate_check_prediction(nbr_pred_raw, client_data)
+        montant_pred = self._validate_amount_prediction(montant_pred_raw, client_data)
+        
+        # Calculate prediction confidence and accuracy metrics
+        confidence_metrics = self._calculate_prediction_confidence(client_data, nbr_pred, montant_pred)
         
         return {
-            'client_id': client_id,  # Add client ID to prediction result
+            'client_id': client_id,
             'predicted_nbr_cheques': nbr_pred,
             'predicted_montant_max': montant_pred,
-            'model_confidence': {
-                'nbr_cheques_r2': self.metrics.get('nbr_cheques', {}).get('r2', 0),
-                'montant_max_r2': self.metrics.get('montant_max', {}).get('r2', 0)
+            'raw_predictions': {
+                'nbr_cheques_raw': nbr_pred_raw,
+                'montant_max_raw': montant_pred_raw
+            },
+            'model_confidence': confidence_metrics,
+            'business_validation': {
+                'nbr_cheques_validated': nbr_pred != nbr_pred_raw,
+                'montant_max_validated': montant_pred != montant_pred_raw,
+                'validation_reason': self._get_validation_reason(client_data, nbr_pred_raw, montant_pred_raw)
             }
         }
+    
+    def _validate_check_prediction(self, prediction: float, client_data: Dict[str, Any]) -> int:
+        """Validate and correct check number predictions using business logic."""
+        # Get historical data
+        nbr_2024 = clean_numeric_data(client_data.get('Nbr_Cheques_2024', 0))
+        ecart_cheques = clean_numeric_data(client_data.get('Ecart_Nbr_Cheques_2024_2025', 0))
+        mobile_banking = client_data.get('Utilise_Mobile_Banking', 0)
+        revenu = clean_numeric_data(client_data.get('Revenu_Estime', 30000))
+        
+        # Apply minimum threshold (cannot predict negative checks)
+        prediction = max(0, prediction)
+        
+        # Business rule 1: If client has strong digital adoption, limit high predictions
+        if mobile_banking and prediction > 20:
+            prediction = min(prediction, 15)  # Digital clients rarely exceed 15 checks
+        
+        # Business rule 2: Income-based validation
+        if revenu < 25000 and prediction > 25:
+            prediction = min(prediction, 20)  # Low income clients limited check usage
+        elif revenu > 100000 and prediction > 50:
+            prediction = min(prediction, 40)  # Even high income clients have practical limits
+        
+        # Business rule 3: Historical trend validation
+        if nbr_2024 > 0:
+            # If historical trend shows strong decrease, limit the prediction
+            if ecart_cheques < -10 and prediction > nbr_2024 * 0.5:
+                prediction = max(prediction * 0.7, nbr_2024 * 0.3)
+            # If no historical data suggests increase, cap dramatic increases
+            elif ecart_cheques <= 0 and prediction > nbr_2024 * 1.5:
+                prediction = min(prediction, nbr_2024 * 1.2)
+        
+        # Business rule 4: Absolute maximum threshold (realistic banking behavior)
+        prediction = min(prediction, 60)  # Very rare for individual clients to exceed 60 checks/year
+        
+        return max(0, round(prediction))
+    
+    def _validate_amount_prediction(self, prediction: float, client_data: Dict[str, Any]) -> float:
+        """Validate and correct amount predictions using business logic."""
+        # Get historical and contextual data
+        montant_2024 = clean_numeric_data(client_data.get('Montant_Max_2024', 0))
+        revenu = clean_numeric_data(client_data.get('Revenu_Estime', 30000))
+        segment = client_data.get('Segment_NMR', 'S3 Essentiel')
+        client_marche = client_data.get('CLIENT_MARCHE', 'Particuliers')
+        
+        # Apply minimum threshold
+        prediction = max(0, prediction)
+        
+        # Business rule 1: Income-based maximum limits
+        if revenu > 0:
+            # Maximum check should not exceed monthly income for most clients
+            monthly_income = revenu / 12
+            if prediction > monthly_income * 2:  # Allow up to 2x monthly income
+                prediction = monthly_income * 1.5
+        
+        # Business rule 2: Segment-based validation
+        segment_limits = {
+            'S1 Excellence': 200000,  # High-value clients
+            'S2 Premium': 150000,     # Premium clients
+            'S3 Essentiel': 100000,   # Essential clients
+            'S4 Avenir': 80000,       # Future clients
+            'S5 Univers': 60000,      # Universe clients
+            'NON SEGMENTE': 50000     # Non-segmented clients
+        }
+        
+        segment_limit = segment_limits.get(segment, 50000)
+        if prediction > segment_limit:
+            prediction = segment_limit * 0.9  # Apply 90% of segment limit
+        
+        # Business rule 3: Market-based validation
+        market_limits = {
+            'Particuliers': 100000,
+            'PME': 500000,
+            'TPE': 200000,
+            'GEI': 1000000,
+            'TRE': 300000,
+            'PRO': 150000
+        }
+        
+        market_limit = market_limits.get(client_marche, 100000)
+        if prediction > market_limit:
+            prediction = market_limit * 0.8
+        
+        # Business rule 4: Historical trend validation
+        if montant_2024 > 0:
+            # Prevent unrealistic jumps (more than 3x historical maximum)
+            if prediction > montant_2024 * 3:
+                prediction = montant_2024 * 2.5
+            # Ensure some minimum based on historical data
+            elif prediction < montant_2024 * 0.3:
+                prediction = max(prediction, montant_2024 * 0.5)
+        
+        # Business rule 5: Minimum realistic amount for active check users
+        # If predicting checks but very low amount, adjust to realistic minimum
+        nbr_pred_raw = clean_numeric_data(client_data.get('predicted_nbr_cheques', 0))
+        if nbr_pred_raw > 5 and prediction < 10000:  # If predicting many checks but tiny amounts
+            prediction = max(prediction, 15000)  # Minimum realistic check amount
+        
+        return max(0, round(prediction, 2))
+    
+    def _calculate_prediction_confidence(self, client_data: Dict[str, Any], 
+                                       nbr_pred: int, montant_pred: float) -> Dict[str, Any]:
+        """Calculate enhanced confidence metrics for predictions."""
+        # Base R² scores
+        nbr_r2 = self.metrics.get('nbr_cheques', {}).get('r2', 0)
+        montant_r2 = self.metrics.get('montant_max', {}).get('r2', 0)
+        
+        # Data quality assessment
+        data_completeness = self._assess_data_completeness(client_data)
+        
+        # Historical trend consistency
+        trend_consistency = self._assess_trend_consistency(client_data, nbr_pred, montant_pred)
+        
+        # Business logic confidence
+        business_confidence = self._assess_business_logic_confidence(client_data, nbr_pred, montant_pred)
+        
+        # Overall confidence calculation
+        overall_confidence = (nbr_r2 + montant_r2) / 2 * data_completeness * trend_consistency * business_confidence
+        
+        return {
+            'nbr_cheques_r2': nbr_r2,
+            'montant_max_r2': montant_r2,
+            'overall_confidence': overall_confidence,
+            'data_completeness_score': data_completeness,
+            'trend_consistency_score': trend_consistency,
+            'business_logic_score': business_confidence,
+            'confidence_level': self._get_confidence_level(overall_confidence)
+        }
+    
+    def _assess_data_completeness(self, client_data: Dict[str, Any]) -> float:
+        """Assess the completeness and quality of input data."""
+        required_fields = ['Revenu_Estime', 'Nbr_Cheques_2024', 'Montant_Max_2024', 
+                          'CLIENT_MARCHE', 'Segment_NMR']
+        
+        complete_fields = sum(1 for field in required_fields if client_data.get(field) is not None)
+        completeness = complete_fields / len(required_fields)
+        
+        # Bonus for additional quality indicators
+        if client_data.get('Utilise_Mobile_Banking') is not None:
+            completeness += 0.1
+        if client_data.get('Ecart_Nbr_Cheques_2024_2025') is not None:
+            completeness += 0.1
+        
+        return min(1.0, completeness)
+    
+    def _assess_trend_consistency(self, client_data: Dict[str, Any], 
+                                nbr_pred: int, montant_pred: float) -> float:
+        """Assess consistency with historical trends."""
+        nbr_2024 = clean_numeric_data(client_data.get('Nbr_Cheques_2024', 0))
+        montant_2024 = clean_numeric_data(client_data.get('Montant_Max_2024', 0))
+        ecart_cheques = clean_numeric_data(client_data.get('Ecart_Nbr_Cheques_2024_2025', 0))
+        
+        consistency_score = 1.0
+        
+        # Check consistency with historical trends
+        if nbr_2024 > 0:
+            predicted_change = nbr_pred - nbr_2024
+            # If historical trend and prediction are in same direction, higher confidence
+            if (ecart_cheques > 0 and predicted_change > 0) or (ecart_cheques < 0 and predicted_change < 0):
+                consistency_score += 0.2
+            # If they contradict strongly, lower confidence
+            elif abs(predicted_change - ecart_cheques) > 10:
+                consistency_score -= 0.3
+        
+        return max(0.3, min(1.0, consistency_score))
+    
+    def _assess_business_logic_confidence(self, client_data: Dict[str, Any], 
+                                        nbr_pred: int, montant_pred: float) -> float:
+        """Assess confidence based on business logic validation."""
+        confidence = 1.0
+        
+        # Mobile banking users should have lower check predictions
+        if client_data.get('Utilise_Mobile_Banking') and nbr_pred > 15:
+            confidence -= 0.2
+        
+        # High income clients with very low amounts seems inconsistent
+        revenu = clean_numeric_data(client_data.get('Revenu_Estime', 30000))
+        if revenu > 80000 and montant_pred < 20000:
+            confidence -= 0.1
+        
+        # Very high predictions should have lower confidence
+        if nbr_pred > 40 or montant_pred > 500000:
+            confidence -= 0.3
+        
+        return max(0.4, confidence)
+    
+    def _get_confidence_level(self, confidence: float) -> str:
+        """Convert confidence score to human-readable level."""
+        if confidence >= 0.8:
+            return "TRÈS ÉLEVÉE"
+        elif confidence >= 0.65:
+            return "ÉLEVÉE"
+        elif confidence >= 0.5:
+            return "MOYENNE"
+        elif confidence >= 0.35:
+            return "FAIBLE"
+        else:
+            return "TRÈS FAIBLE"
+    
+    def _get_validation_reason(self, client_data: Dict[str, Any], 
+                             nbr_raw: float, montant_raw: float) -> str:
+        """Get explanation for why predictions were adjusted."""
+        reasons = []
+        
+        if nbr_raw < 0:
+            reasons.append("Correction: nombre de chèques négatif ajusté à 0")
+        if montant_raw < 0:
+            reasons.append("Correction: montant négatif ajusté à 0")
+        
+        if client_data.get('Utilise_Mobile_Banking') and nbr_raw > 20:
+            reasons.append("Ajustement: client digital, usage chèques limité")
+        
+        revenu = clean_numeric_data(client_data.get('Revenu_Estime', 30000))
+        if montant_raw > revenu / 6:  # More than 2 months income
+            reasons.append("Ajustement: montant cohérent avec le revenu")
+        
+        if nbr_raw > 60:
+            reasons.append("Ajustement: plafond réaliste appliqué")
+            
+        return "; ".join(reasons) if reasons else "Aucun ajustement nécessaire"
     
     def _prepare_features(self, data: List[Dict[str, Any]]) -> Tuple[List[List[float]], List[float], List[float]]:
         """Prepare features for training."""

@@ -8478,5 +8478,2848 @@
       }
     },
     "status": "GENERATED"
+  },
+  {
+    "client_id": "001b4107",
+    "timestamp": "2025-07-29T21:18:58.707461",
+    "recommendations": {
+      "client_id": "001b4107",
+      "behavior_profile": {
+        "check_dependency_score": 0.0,
+        "digital_adoption_score": 0.4,
+        "payment_evolution_score": 0.8999999999999999,
+        "risk_profile_score": 0.6,
+        "behavior_segment": "EQUILIBRE"
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.8260000000000001
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.7,
+            "feasibility": 0.8235336904067214,
+            "global": 0.7747067380813443
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.726
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 50.238134761626895,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8260000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.7747067380813443,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.726,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:18:58.691462",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client core avec besoins standards",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Transition progressive vers les services modernes"
+        },
+        "value_potential": {
+          "total_value_potential": 440.30053561008214,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 244.61140867226786,
+          "retention_value": 195.68912693781428,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "001b4107",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 24461.140867226786,
+            "recommended_check_count": 37,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "001b4107",
+    "timestamp": "2025-07-29T21:19:01.476529",
+    "recommendations": {
+      "client_id": "001b4107",
+      "behavior_profile": {
+        "check_dependency_score": 0.0,
+        "digital_adoption_score": 0.4,
+        "payment_evolution_score": 0.8999999999999999,
+        "risk_profile_score": 0.6,
+        "behavior_segment": "EQUILIBRE"
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.8260000000000001
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.7,
+            "feasibility": 0.8235336904067214,
+            "global": 0.7747067380813443
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.726
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 50.238134761626895,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8260000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.7747067380813443,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.726,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:19:01.472538",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client core avec besoins standards",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Transition progressive vers les services modernes"
+        },
+        "value_potential": {
+          "total_value_potential": 440.30053561008214,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 244.61140867226786,
+          "retention_value": 195.68912693781428,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "001b4107",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 24461.140867226786,
+            "recommended_check_count": 37,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "001fc661",
+    "timestamp": "2025-07-29T21:28:07.554546",
+    "recommendations": {
+      "client_id": "001fc661",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.064,
+          "digital_adoption_score": 0.35,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 0.5,
+          "modernity_score": 0.7182999999999999
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.16,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8999999999999999,
+          "risk_profile_score": 0.4,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.87
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.87
+          }
+        },
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.8200000000000001
+          }
+        },
+        {
+          "service_id": "pack_exclusif",
+          "service_info": {
+            "nom": "Pack Compte Exclusif",
+            "description": "Package premium avec services bancaires avanc\u00e9s",
+            "avantages": [
+              "Conseiller d\u00e9di\u00e9",
+              "Frais r\u00e9duits",
+              "Services prioritaires",
+              "Carte Premium incluse"
+            ],
+            "cible": "Optimisation compl\u00e8te des services bancaires",
+            "cout": 600,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Pack Premium"
+          },
+          "scores": {
+            "base": 0.8548268400714427,
+            "urgency": 0.7,
+            "feasibility": 0.5641120130053582,
+            "global": 0.750235822636793
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 3.7969697922984915,
+        "pourcentage_reduction": 63.282829871641525,
+        "impacts_par_service": {
+          "attijari_realtime": {
+            "reduction_estimee": 0.8352000000000002,
+            "score_adoption": 0.87,
+            "impact_financier": {
+              "economies_frais": 3.758400000000001,
+              "revenus_service": 6.013440000000001,
+              "impact_net": 2.25504
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 1.044,
+            "score_adoption": 0.87,
+            "impact_financier": {
+              "economies_frais": 4.698,
+              "revenus_service": 11.275200000000002,
+              "impact_net": 6.577200000000001
+            }
+          },
+          "attijari_mobile": {
+            "reduction_estimee": 1.3776,
+            "score_adoption": 0.8200000000000001,
+            "impact_financier": {
+              "economies_frais": 6.199199999999999,
+              "revenus_service": 4.95936,
+              "impact_net": -1.2398399999999992
+            }
+          },
+          "pack_exclusif": {
+            "reduction_estimee": 0.5401697922984909,
+            "score_adoption": 0.750235822636793,
+            "impact_financier": {
+              "economies_frais": 2.430764065343209,
+              "revenus_service": 324.10187537909457,
+              "impact_net": 321.67111131375134
+            }
+          }
+        },
+        "benefice_bancaire_estime": 363.4362394444378,
+        "economies_operationnelles": 17.08636406534321,
+        "revenus_additionnels": 346.34987537909456
+      },
+      "generation_timestamp": "2025-07-29T21:28:07.543530",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Usage mod\u00e9r\u00e9 des ch\u00e8ques - Transition progressive recommand\u00e9e",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 4.0,
+          "check_usage_12m": 3.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Segment non identifi\u00e9",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Approche standard avec \u00e9valuation approfondie"
+        },
+        "value_potential": {
+          "total_value_potential": 1263.436239444438,
+          "cost_savings": 17.08636406534321,
+          "service_revenues": 346.34987537909456,
+          "cross_sell_potential": 500.0,
+          "retention_value": 400.0,
+          "value_category": "HIGH"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 2 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "001fc661",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 6.0,
+            "usage_efficiency": "NON APPLICABLE"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client non segment\u00e9 - \u00e9ligibilit\u00e9 refus\u00e9e"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "00c412b1",
+    "timestamp": "2025-07-29T21:28:15.192840",
+    "recommendations": {
+      "client_id": "00c412b1",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.35,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 0.7,
+          "modernity_score": 0.7775
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8999999999999999,
+          "risk_profile_score": 0.6,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.8260000000000001
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.7,
+            "feasibility": 0.7630391934330123,
+            "global": 0.7626078386866024
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.726
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 49.996156773732054,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8260000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.7626078386866024,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.726,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:28:15.192840",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client core avec besoins standards",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Transition progressive vers les services modernes"
+        },
+        "value_potential": {
+          "total_value_potential": 349.55879014951853,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 194.19932786084362,
+          "retention_value": 155.3594622886749,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "00c412b1",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 19419.932786084362,
+            "recommended_check_count": 32,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "00c412b1",
+    "timestamp": "2025-07-29T21:28:18.649474",
+    "recommendations": {
+      "client_id": "00c412b1",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.35,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 0.7,
+          "modernity_score": 0.7775
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8999999999999999,
+          "risk_profile_score": 0.6,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.8260000000000001
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.7,
+            "feasibility": 0.7630391934330123,
+            "global": 0.7626078386866024
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.7,
+            "feasibility": 0.8300000000000001,
+            "global": 0.726
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 49.996156773732054,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8260000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.7626078386866024,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.726,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:28:18.649474",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client core avec besoins standards",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Transition progressive vers les services modernes"
+        },
+        "value_potential": {
+          "total_value_potential": 349.55879014951853,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 194.19932786084362,
+          "retention_value": 155.3594622886749,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "00c412b1",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 19419.932786084362,
+            "recommended_check_count": 32,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "01b01eb8",
+    "timestamp": "2025-07-29T21:28:22.646090",
+    "recommendations": {
+      "client_id": "01b01eb8",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0666666666666666,
+          "digital_adoption_score": 0.35,
+          "payment_evolution_score": 0.7,
+          "financial_sophistication_score": 1.0,
+          "modernity_score": 0.7424999999999999
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.13333333333333333,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.30000000000000004,
+          "risk_profile_score": 0.9,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.5,
+            "feasibility": 0.8900000000000001,
+            "global": 0.8280000000000001
+          }
+        },
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.5,
+            "feasibility": 0.8900000000000001,
+            "global": 0.778
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7999999999999999,
+            "urgency": 0.5,
+            "feasibility": 0.8900000000000001,
+            "global": 0.728
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 1.2498,
+        "pourcentage_reduction": 62.49,
+        "impacts_par_service": {
+          "travel_card": {
+            "reduction_estimee": 0.41400000000000003,
+            "score_adoption": 0.8280000000000001,
+            "impact_financier": {
+              "economies_frais": 1.8630000000000002,
+              "revenus_service": 4.4712000000000005,
+              "impact_net": 2.6082
+            }
+          },
+          "attijari_mobile": {
+            "reduction_estimee": 0.5446,
+            "score_adoption": 0.778,
+            "impact_financier": {
+              "economies_frais": 2.4507,
+              "revenus_service": 1.96056,
+              "impact_net": -0.4901399999999998
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.2912,
+            "score_adoption": 0.728,
+            "impact_financier": {
+              "economies_frais": 1.3104,
+              "revenus_service": 2.0966400000000003,
+              "impact_net": 0.7862400000000003
+            }
+          }
+        },
+        "benefice_bancaire_estime": 14.152500000000002,
+        "economies_operationnelles": 5.6241,
+        "revenus_additionnels": 8.528400000000001
+      },
+      "generation_timestamp": "2025-07-29T21:28:22.646090",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "stable",
+          "check_usage_6m": 2.0,
+          "check_usage_12m": 2.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client premium avec fort potentiel de revenus",
+          "priority_services": [
+            "services_premium",
+            "carte_sans_contact"
+          ],
+          "approach": "Approche consultative avec services haut de gamme"
+        },
+        "value_potential": {
+          "total_value_potential": 589.0144849422645,
+          "cost_savings": 5.6241,
+          "service_revenues": 8.528400000000001,
+          "cross_sell_potential": 319.3677694123692,
+          "retention_value": 255.49421552989537,
+          "value_category": "MEDIUM"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 1 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "01b01eb8",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 100000.0,
+            "recommended_check_count": 75,
+            "current_usage": 2.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [
+              "Suivi privil\u00e9gi\u00e9 - conseiller d\u00e9di\u00e9"
+            ],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "02efae80",
+    "timestamp": "2025-07-29T21:28:52.801563",
+    "recommendations": {
+      "client_id": "02efae80",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.25,
+          "payment_evolution_score": 0.75,
+          "financial_sophistication_score": 0.65,
+          "modernity_score": 0.68
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.2,
+          "risk_profile_score": 0.5,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.5,
+            "feasibility": 0.8,
+            "global": 0.76
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.5,
+            "feasibility": 0.8,
+            "global": 0.7100000000000001
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.5,
+            "feasibility": 0.8,
+            "global": 0.66
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 57.550000000000004,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.76,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.7100000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.66,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:28:52.801563",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "stable",
+          "check_usage_6m": 0.0,
+          "check_usage_12m": 0.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Segment non identifi\u00e9",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Approche standard avec \u00e9valuation approfondie"
+        },
+        "value_potential": {
+          "total_value_potential": 610.9657518443854,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 339.4254176913252,
+          "retention_value": 271.5403341530602,
+          "value_category": "MEDIUM"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "02efae80",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 0.0,
+            "usage_efficiency": "NON APPLICABLE"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "0734b918",
+    "timestamp": "2025-07-29T21:29:01.138168",
+    "recommendations": {
+      "client_id": "0734b918",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.02857142857142856,
+          "digital_adoption_score": 0.44999999999999996,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 1.0,
+          "modernity_score": 0.8539285714285714
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.07142857142857142,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8,
+          "risk_profile_score": 0.9,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8600000000000001,
+            "global": 0.8320000000000001
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8600000000000001,
+            "global": 0.8320000000000001
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.75,
+            "urgency": 0.7,
+            "feasibility": 0.8600000000000001,
+            "global": 0.757
+          }
+        },
+        {
+          "service_id": "pack_exclusif",
+          "service_info": {
+            "nom": "Pack Compte Exclusif",
+            "description": "Package premium avec services bancaires avanc\u00e9s",
+            "avantages": [
+              "Conseiller d\u00e9di\u00e9",
+              "Frais r\u00e9duits",
+              "Services prioritaires",
+              "Carte Premium incluse"
+            ],
+            "cible": "Optimisation compl\u00e8te des services bancaires",
+            "cout": 600,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Pack Premium"
+          },
+          "scores": {
+            "base": 0.6696074651764795,
+            "urgency": 0.7,
+            "feasibility": 0.610220559888236,
+            "global": 0.666847844565887
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.6005017413479065,
+        "pourcentage_reduction": 60.050174134790645,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.23296000000000003,
+            "score_adoption": 0.8320000000000001,
+            "impact_financier": {
+              "economies_frais": 1.0483200000000001,
+              "revenus_service": 0.8386560000000001,
+              "impact_net": -0.20966400000000007
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.16640000000000002,
+            "score_adoption": 0.8320000000000001,
+            "impact_financier": {
+              "economies_frais": 0.7488000000000001,
+              "revenus_service": 1.7971200000000005,
+              "impact_net": 1.0483200000000004
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.12112,
+            "score_adoption": 0.757,
+            "impact_financier": {
+              "economies_frais": 0.54504,
+              "revenus_service": 0.872064,
+              "impact_net": 0.327024
+            }
+          },
+          "pack_exclusif": {
+            "reduction_estimee": 0.08002174134790645,
+            "score_adoption": 0.666847844565887,
+            "impact_financier": {
+              "economies_frais": 0.360097836065579,
+              "revenus_service": 48.01304480874387,
+              "impact_net": 47.65294697267829
+            }
+          }
+        },
+        "benefice_bancaire_estime": 54.22314264480945,
+        "economies_operationnelles": 2.702257836065579,
+        "revenus_additionnels": 51.52088480874387
+      },
+      "generation_timestamp": "2025-07-29T21:29:01.122789",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client \u00e0 fort potentiel avec besoins sophistiqu\u00e9s",
+          "priority_services": [
+            "mobile_banking",
+            "services_premium"
+          ],
+          "approach": "Accompagnement personnalis\u00e9 vers le digital"
+        },
+        "value_potential": {
+          "total_value_potential": 954.2231426448094,
+          "cost_savings": 2.702257836065579,
+          "service_revenues": 51.52088480874387,
+          "cross_sell_potential": 500.0,
+          "retention_value": 400.0,
+          "value_category": "MEDIUM"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "0734b918",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": true,
+          "financial_conditions": {
+            "recommended_check_limit": 60000.0,
+            "recommended_check_count": 60,
+            "current_usage": 1.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "FAIBLE",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client \u00e9ligible selon les crit\u00e8res bancaires"
+            ],
+            "special_conditions": [
+              "Suivi privil\u00e9gi\u00e9 - conseiller d\u00e9di\u00e9"
+            ],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "MEDIUM",
+          "digital_services_priority": "MEDIUM"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "0010c742",
+    "timestamp": "2025-07-29T21:33:16.875487",
+    "recommendations": {
+      "client_id": "0010c742",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.35,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 0.55,
+          "modernity_score": 0.7474999999999999
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8,
+          "risk_profile_score": 0.32000000000000006,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.9,
+            "feasibility": 0.8,
+            "global": 0.88
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.9,
+            "feasibility": 0.7910904502975658,
+            "global": 0.8282180900595132
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.9,
+            "feasibility": 0.8,
+            "global": 0.78
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 53.68436180119027,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.88,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8282180900595132,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.78,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:33:16.875487",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client avec besoins sp\u00e9cifiques",
+          "priority_services": [
+            "formation_digital",
+            "accompagnement_personnel"
+          ],
+          "approach": "Accompagnement adapt\u00e9 et formation"
+        },
+        "value_potential": {
+          "total_value_potential": 436.63567544634867,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 242.5753752479715,
+          "retention_value": 194.06030019837718,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "0010c742",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Demande de d\u00e9rogation active",
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Demande de d\u00e9rogation en cours - \u00e9ligibilit\u00e9 suspendue"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "0013d624",
+    "timestamp": "2025-07-29T21:33:31.772818",
+    "recommendations": {
+      "client_id": "0013d624",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.7999999999999999,
+          "financial_sophistication_score": 0.9,
+          "modernity_score": 0.78
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.5,
+          "risk_profile_score": 0.4,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.9,
+            "feasibility": 0.8600000000000001,
+            "global": 0.892
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.9,
+            "feasibility": 0.8600000000000001,
+            "global": 0.8420000000000001
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.9,
+            "feasibility": 0.8600000000000001,
+            "global": 0.792
+          }
+        },
+        {
+          "service_id": "pack_exclusif",
+          "service_info": {
+            "nom": "Pack Compte Exclusif",
+            "description": "Package premium avec services bancaires avanc\u00e9s",
+            "avantages": [
+              "Conseiller d\u00e9di\u00e9",
+              "Frais r\u00e9duits",
+              "Services prioritaires",
+              "Carte Premium incluse"
+            ],
+            "cible": "Optimisation compl\u00e8te des services bancaires",
+            "cout": 600,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Pack Premium"
+          },
+          "scores": {
+            "base": 0.5815206699607985,
+            "urgency": 0.9,
+            "feasibility": 0.6036140502470599,
+            "global": 0.6814831450298113
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 62.665797740357746,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.892,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8420000000000001,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.792,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "pack_exclusif": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.6814831450298113,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-29T21:33:31.772818",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "stable",
+          "check_usage_6m": 0.0,
+          "check_usage_12m": 0.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client jeune avec potentiel de croissance",
+          "priority_services": [
+            "mobile_banking",
+            "paiement_mobile"
+          ],
+          "approach": "\u00c9ducation financi\u00e8re et services digitaux"
+        },
+        "value_potential": {
+          "total_value_potential": 785.0529044470779,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 436.1405024705989,
+          "retention_value": 348.9124019764791,
+          "value_category": "MEDIUM"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "0013d624",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Demande de d\u00e9rogation active",
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Demande de d\u00e9rogation en cours - \u00e9ligibilit\u00e9 suspendue"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "0010c742",
+    "timestamp": "2025-07-30T04:06:36.290542",
+    "recommendations": {
+      "client_id": "0010c742",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 0.55,
+          "modernity_score": 0.76
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.0,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8,
+          "risk_profile_score": 0.32000000000000006,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.9,
+            "feasibility": 0.8,
+            "global": 0.88
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 0.8,
+            "urgency": 0.9,
+            "feasibility": 0.7910904502975658,
+            "global": 0.8282180900595132
+          }
+        },
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 0.7,
+            "urgency": 0.9,
+            "feasibility": 0.8,
+            "global": 0.78
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 0.0,
+        "pourcentage_reduction": 53.68436180119027,
+        "impacts_par_service": {
+          "attijari_mobile": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.88,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.8282180900595132,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          },
+          "attijari_realtime": {
+            "reduction_estimee": 0.0,
+            "score_adoption": 0.78,
+            "impact_financier": {
+              "economies_frais": 0.0,
+              "revenus_service": 0.0,
+              "impact_net": 0.0
+            }
+          }
+        },
+        "benefice_bancaire_estime": 0.0,
+        "economies_operationnelles": 0.0,
+        "revenus_additionnels": 0.0
+      },
+      "generation_timestamp": "2025-07-30T04:06:36.280299",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Faible usage des ch\u00e8ques - Maintenir les bonnes pratiques",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 0,
+          "check_usage_12m": 0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Client avec besoins sp\u00e9cifiques",
+          "priority_services": [
+            "formation_digital",
+            "accompagnement_personnel"
+          ],
+          "approach": "Accompagnement adapt\u00e9 et formation"
+        },
+        "value_potential": {
+          "total_value_potential": 436.63567544634867,
+          "cost_savings": 0.0,
+          "service_revenues": 0.0,
+          "cross_sell_potential": 242.5753752479715,
+          "retention_value": 194.06030019837718,
+          "value_category": "LOW"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 0 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "0010c742",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 0.0,
+            "usage_efficiency": "SOUS-UTILIS\u00c9"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Demande de d\u00e9rogation active",
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Demande de d\u00e9rogation en cours - \u00e9ligibilit\u00e9 suspendue"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
+  },
+  {
+    "client_id": "001fc661",
+    "timestamp": "2025-07-30T04:06:51.176132",
+    "recommendations": {
+      "client_id": "001fc661",
+      "behavior_profile": {
+        "behavior_segment": "EQUILIBRE_MIXTE",
+        "behavioral_scores": {
+          "check_dependency_score": 0.064,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 1.0,
+          "financial_sophistication_score": 0.5,
+          "modernity_score": 0.7308
+        },
+        "confidence": 1.0,
+        "enhanced": true,
+        "legacy_compatibility": {
+          "check_dependency_score": 0.16,
+          "digital_adoption_score": 0.4,
+          "payment_evolution_score": 0.8999999999999999,
+          "risk_profile_score": 0.4,
+          "behavior_segment": "EQUILIBRE"
+        }
+      },
+      "recommendations": [
+        {
+          "service_id": "attijari_realtime",
+          "service_info": {
+            "nom": "Attijari Real Time",
+            "description": "Plateforme bancaire en ligne pour gestion compl\u00e8te 24h/24",
+            "avantages": [
+              "Virements permanents",
+              "Consultation cr\u00e9dits",
+              "Tableaux amortissement",
+              "Services en ligne"
+            ],
+            "cible": "\u00c9limination des ch\u00e8ques r\u00e9currents par automatisation",
+            "cout": 0,
+            "lien_produit": "https://www.attijarirealtime.com.tn/",
+            "type": "Banque en Ligne"
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.87
+          }
+        },
+        {
+          "service_id": "travel_card",
+          "service_info": {
+            "nom": "Travel Card Attijari",
+            "description": "Carte pr\u00e9pay\u00e9e rechargeable pour tous vos paiements",
+            "avantages": [
+              "Rechargeable 24h/24",
+              "Paiements s\u00e9curis\u00e9s",
+              "Contr\u00f4le budget",
+              "Sans d\u00e9couvert"
+            ],
+            "cible": "Remplace les ch\u00e8ques par carte pr\u00e9pay\u00e9e",
+            "cout": 50,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Carte Bancaire"
+          },
+          "scores": {
+            "base": 1.0,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.87
+          }
+        },
+        {
+          "service_id": "attijari_mobile",
+          "service_info": {
+            "nom": "Attijari Mobile Tunisia",
+            "description": "Application mobile officielle pour g\u00e9rer vos comptes 24h/24, 7j/7",
+            "avantages": [
+              "Consultation soldes en temps r\u00e9el",
+              "Historique 6 mois",
+              "Virements gratuits",
+              "Contr\u00f4le ch\u00e9quier"
+            ],
+            "cible": "R\u00e9duction significative des ch\u00e8ques par virements mobiles",
+            "cout": 0,
+            "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+            "type": "Mobile Banking"
+          },
+          "scores": {
+            "base": 0.9,
+            "urgency": 0.7,
+            "feasibility": 0.8,
+            "global": 0.8200000000000001
+          }
+        },
+        {
+          "service_id": "pack_exclusif",
+          "service_info": {
+            "nom": "Pack Compte Exclusif",
+            "description": "Package premium avec services bancaires avanc\u00e9s",
+            "avantages": [
+              "Conseiller d\u00e9di\u00e9",
+              "Frais r\u00e9duits",
+              "Services prioritaires",
+              "Carte Premium incluse"
+            ],
+            "cible": "Optimisation compl\u00e8te des services bancaires",
+            "cout": 600,
+            "lien_produit": "https://www.attijaribank.com.tn/fr",
+            "type": "Pack Premium"
+          },
+          "scores": {
+            "base": 0.8548268400714427,
+            "urgency": 0.7,
+            "feasibility": 0.5641120130053582,
+            "global": 0.750235822636793
+          }
+        }
+      ],
+      "impact_estimations": {
+        "reduction_cheques_estimee": 3.7969697922984915,
+        "pourcentage_reduction": 63.282829871641525,
+        "impacts_par_service": {
+          "attijari_realtime": {
+            "reduction_estimee": 0.8352000000000002,
+            "score_adoption": 0.87,
+            "impact_financier": {
+              "economies_frais": 3.758400000000001,
+              "revenus_service": 6.013440000000001,
+              "impact_net": 2.25504
+            }
+          },
+          "travel_card": {
+            "reduction_estimee": 1.044,
+            "score_adoption": 0.87,
+            "impact_financier": {
+              "economies_frais": 4.698,
+              "revenus_service": 11.275200000000002,
+              "impact_net": 6.577200000000001
+            }
+          },
+          "attijari_mobile": {
+            "reduction_estimee": 1.3776,
+            "score_adoption": 0.8200000000000001,
+            "impact_financier": {
+              "economies_frais": 6.199199999999999,
+              "revenus_service": 4.95936,
+              "impact_net": -1.2398399999999992
+            }
+          },
+          "pack_exclusif": {
+            "reduction_estimee": 0.5401697922984909,
+            "score_adoption": 0.750235822636793,
+            "impact_financier": {
+              "economies_frais": 2.430764065343209,
+              "revenus_service": 324.10187537909457,
+              "impact_net": 321.67111131375134
+            }
+          }
+        },
+        "benefice_bancaire_estime": 363.4362394444378,
+        "economies_operationnelles": 17.08636406534321,
+        "revenus_additionnels": 346.34987537909456
+      },
+      "generation_timestamp": "2025-07-30T04:06:51.165207",
+      "advanced_insights": {
+        "behavioral_insights": [
+          "Usage mod\u00e9r\u00e9 des ch\u00e8ques - Transition progressive recommand\u00e9e",
+          "\u2705 R\u00e9duction des ch\u00e8ques en cours - Accompagner la transition",
+          "\ud83d\udccb Non-utilisateur mobile banking - Formation et accompagnement n\u00e9cessaires"
+        ],
+        "evolution_predictions": {
+          "trajectory": "improving",
+          "check_usage_6m": 4.0,
+          "check_usage_12m": 3.0,
+          "digital_readiness": "medium",
+          "intervention_urgency": "low"
+        },
+        "segment_specific_insights": {
+          "description": "Segment non identifi\u00e9",
+          "priority_services": [
+            "carte_bancaire",
+            "mobile_banking"
+          ],
+          "approach": "Approche standard avec \u00e9valuation approfondie"
+        },
+        "value_potential": {
+          "total_value_potential": 1263.436239444438,
+          "cost_savings": 17.08636406534321,
+          "service_revenues": 346.34987537909456,
+          "cross_sell_potential": 500.0,
+          "retention_value": 400.0,
+          "value_category": "HIGH"
+        },
+        "recommended_actions": [
+          {
+            "action": "Suivre l'\u00e9volution mensuelle des habitudes de paiement",
+            "timeline": "Continue",
+            "priority": "LOW"
+          }
+        ],
+        "success_indicators": {
+          "primary_kpis": {
+            "check_reduction_target": "R\u00e9duction de 2 ch\u00e8ques (30%)",
+            "service_adoption_target": "Adoption d'au moins 1 service recommand\u00e9",
+            "timeline": "6 mois"
+          },
+          "secondary_kpis": {
+            "digital_engagement": "Utilisation active des services digitaux",
+            "satisfaction_score": "Score de satisfaction > 8/10",
+            "retention_rate": "Maintien de la relation client"
+          },
+          "measurement_plan": {
+            "frequency": "Mensuelle",
+            "metrics": [
+              "Nombre de ch\u00e8ques",
+              "Adoption services",
+              "Utilisation digitale"
+            ],
+            "review_points": [
+              "1 mois",
+              "3 mois",
+              "6 mois"
+            ]
+          }
+        }
+      },
+      "eligibility_analysis": {
+        "eligibility_analysis": {
+          "client_id": "001fc661",
+          "evaluation_date": "2025-07-11",
+          "eligibility_status": false,
+          "financial_conditions": {
+            "recommended_check_limit": 0,
+            "recommended_check_count": 0,
+            "current_usage": 6.0,
+            "usage_efficiency": "NON APPLICABLE"
+          },
+          "risk_assessment": {
+            "risk_level": "\u00c9LEV\u00c9",
+            "risk_factors": [
+              "Non-adoption services digitaux"
+            ]
+          },
+          "recommendations": {
+            "eligibility_reasons": [
+              "Client non segment\u00e9 - \u00e9ligibilit\u00e9 refus\u00e9e"
+            ],
+            "special_conditions": [],
+            "next_review_date": "2025-10-11"
+          }
+        },
+        "integration_status": "COMPLETE",
+        "recommendations_enhancement": {
+          "checkbook_alternatives_priority": "HIGH",
+          "digital_services_priority": "HIGH"
+        }
+      }
+    },
+    "status": "GENERATED"
   }
 ]

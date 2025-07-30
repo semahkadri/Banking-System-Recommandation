@@ -18,10 +18,10 @@
     "average_max_amount_2024": 107107.18868293862
   },
   "target_variable_stats": {
-    "future_checks_mean": 0.4833252779120348,
-    "future_checks_std": 1.1546324438079487,
-    "future_amount_mean": 142104.64255992914,
-    "future_amount_std": 30183.417864333245
+    "future_checks_mean": 0.48501691638472694,
+    "future_checks_std": 1.1725210736155154,
+    "future_amount_mean": 142107.36004377648,
+    "future_amount_std": 30223.23337648335
   },
   "market_distribution": {
     "TPE": 713,

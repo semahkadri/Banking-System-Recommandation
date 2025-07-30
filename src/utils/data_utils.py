@@ -206,7 +206,7 @@ def validate_data_completeness(
 
 def format_currency_tnd(amount: float, precision: int = 2) -> str:
     """
-    Format amount in Tunisian Dinar (TND) currency.
+    Format amount in Tunisian Dinar (TND) currency with consistent precision.
     
     Args:
         amount: Amount to format
@@ -214,18 +214,58 @@ def format_currency_tnd(amount: float, precision: int = 2) -> str:
         
     Returns:
         Formatted string with TND currency symbol
+        
+    Examples:
+        format_currency_tnd(1234.56) -> "1,234.56 TND"
+        format_currency_tnd(1234567) -> "1.23M TND"
+        format_currency_tnd(50000) -> "50.00K TND"
     """
     try:
+        # Ensure amount is a valid number
+        amount = float(amount)
+        
         if amount >= 1000000:
-            # For millions, show in M TND
-            return f"{amount/1000000:,.{max(1, precision-1)}f}M TND"
+            # For millions, maintain consistent precision
+            scaled_amount = amount / 1000000
+            return f"{scaled_amount:,.{precision}f}M TND"
         elif amount >= 1000:
-            # For thousands, show in K TND  
-            return f"{amount/1000:,.{max(1, precision-1)}f}K TND"
+            # For thousands, maintain consistent precision
+            scaled_amount = amount / 1000
+            return f"{scaled_amount:,.{precision}f}K TND"
         else:
-            # Regular format
+            # Regular format with specified precision
             return f"{amount:,.{precision}f} TND"
     except (ValueError, TypeError):
+        return "0.00 TND"
+
+
+def format_currency_tnd_business(amount: float, context: str = "general") -> str:
+    """
+    Format currency for business context with appropriate precision.
+    
+    Args:
+        amount: Amount to format
+        context: Business context ('service_cost', 'revenue', 'impact', 'prediction')
+        
+    Returns:
+        Appropriately formatted currency string
+    """
+    try:
+        amount = float(amount)
+        
+        if context == "service_cost":
+            # Service costs: no decimals needed (50 TND, 120 TND)
+            return format_currency_tnd(amount, precision=0)
+        elif context == "revenue" or context == "impact":
+            # Revenue/Impact: 2 decimals for precision
+            return format_currency_tnd(amount, precision=2)
+        elif context == "prediction":
+            # Predictions: 2 decimals for accuracy
+            return format_currency_tnd(amount, precision=2)
+        else:
+            # Default: 2 decimals
+            return format_currency_tnd(amount, precision=2)
+    except:
         return "0.00 TND"
 
 

@@ -1,32 +1,32 @@
 {
-  "QR Code / TuniPay": {
-    "historical_count": 31491,
-    "current_count": 44072,
-    "change_rate_percent": 39.95109713886507
+  "Carte bancaire": {
+    "historical_count": 157284,
+    "current_count": 285132,
+    "change_rate_percent": 81.28480964370183
   },
   "Ch\u00e8que": {
     "historical_count": 249709,
     "current_count": 35664,
     "change_rate_percent": -85.71777549067114
   },
+  "Esp\u00e8ces": {
+    "historical_count": 62885,
+    "current_count": 63177,
+    "change_rate_percent": 0.4643396676472926
+  },
   "Agence": {
     "historical_count": 31388,
     "current_count": 50220,
     "change_rate_percent": 59.997451255256784
   },
-  "Carte bancaire": {
-    "historical_count": 157284,
-    "current_count": 285132,
-    "change_rate_percent": 81.28480964370183
+  "QR Code / TuniPay": {
+    "historical_count": 31491,
+    "current_count": 44072,
+    "change_rate_percent": 39.95109713886507
   },
   "Virement": {
     "historical_count": 94288,
     "current_count": 157680,
     "change_rate_percent": 67.23230951976922
-  },
-  "Esp\u00e8ces": {
-    "historical_count": 62885,
-    "current_count": 63177,
-    "change_rate_percent": 0.4643396676472926
   }
 }

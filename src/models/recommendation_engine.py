@@ -20,6 +20,14 @@ import sys
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.client_id_utils import extract_client_id
 
+# Import enhanced behavioral segmentation (optional)
+try:
+    from utils.behavioral_segmentation import BehavioralSegmentationEngine
+    ENHANCED_SEGMENTATION_AVAILABLE = True
+except ImportError:
+    ENHANCED_SEGMENTATION_AVAILABLE = False
+    print("[WARNING] Enhanced behavioral segmentation not available, using legacy system")
+
 class ClientBehaviorAnalyzer:
     """Analyse le comportement des clients pour la segmentation."""
     
@@ -147,101 +155,132 @@ class ClientBehaviorAnalyzer:
 class RecommendationEngine:
     """Moteur de recommandations personnalisées."""
     
-    def __init__(self, data_path: str = "data/processed"):
+    def __init__(self, data_path: str = "data/processed", use_enhanced_segmentation: bool = True):
         self.data_path = Path(data_path)
         self.behavior_analyzer = ClientBehaviorAnalyzer()
         
-        # Règles de recommandation par segment
+        # Configuration de la segmentation comportementale
+        self.use_enhanced_segmentation = use_enhanced_segmentation and ENHANCED_SEGMENTATION_AVAILABLE
+        
+        if self.use_enhanced_segmentation:
+            self.enhanced_segmentation_engine = BehavioralSegmentationEngine()
+            print("[RECOMMENDATION] Utilisation de la segmentation comportementale avancée")
+        else:
+            self.enhanced_segmentation_engine = None
+            print("[RECOMMENDATION] Utilisation de la segmentation comportementale standard")
+        
+        # Règles de recommandation par segment - PRODUITS RÉELS ATTIJARI BANK
         self.recommendation_rules = {
             "TRADITIONNEL_RESISTANT": {
-                "priority": ["formation_digital", "accompagnement_personnel", "carte_bancaire"],
-                "messaging": "Accompagnement progressif vers les alternatives",
+                "priority": ["pack_senior_plus", "travel_card", "attijari_realtime"],
+                "messaging": "Accompagnement progressif vers les alternatives digitales Attijari",
                 "urgency": "BASSE"
             },
             "TRADITIONNEL_MODERE": {
-                "priority": ["carte_bancaire", "virement_automatique", "formation_digital"],
-                "messaging": "Transition douce vers les services modernes",
+                "priority": ["travel_card", "attijari_realtime", "pack_senior_plus"],
+                "messaging": "Transition douce vers les services modernes d'Attijari Bank",
                 "urgency": "MOYENNE"
             },
             "DIGITAL_TRANSITOIRE": {
-                "priority": ["mobile_banking", "paiement_mobile", "carte_sans_contact"],
-                "messaging": "Optimisation de votre expérience digitale",
+                "priority": ["attijari_mobile", "flouci_payment", "webank_account"],
+                "messaging": "Optimisation de votre expérience digitale avec Attijari",
                 "urgency": "MOYENNE"
             },
             "DIGITAL_ADOPTER": {
-                "priority": ["services_premium", "carte_sans_contact", "paiement_mobile"],
-                "messaging": "Services avancés pour utilisateurs digitaux",
+                "priority": ["pack_exclusif", "flouci_payment", "credit_conso"],
+                "messaging": "Services avancés Attijari pour utilisateurs digitaux",
                 "urgency": "HAUTE"
             },
             "DIGITAL_NATIF": {
-                "priority": ["services_premium", "mobile_banking", "carte_sans_contact"],
-                "messaging": "Solutions innovantes et avancées",
+                "priority": ["webank_account", "attijari_mobile", "pack_exclusif"],
+                "messaging": "Solutions innovantes et avancées d'Attijari Bank",
                 "urgency": "HAUTE"
             },
-            "EQUILIBRE": {
-                "priority": ["carte_bancaire", "mobile_banking", "virement_automatique"],
-                "messaging": "Équilibre optimal entre services traditionnels et modernes",
+            "EQUILIBRE_MIXTE": {
+                "priority": ["attijari_mobile", "attijari_realtime", "travel_card"],
+                "messaging": "Équilibre optimal entre services traditionnels et modernes Attijari",
+                "urgency": "MOYENNE"
+            },
+            "EQUILIBRE": {  # Backward compatibility
+                "priority": ["attijari_mobile", "attijari_realtime", "travel_card"],
+                "messaging": "Équilibre optimal entre services traditionnels et modernes Attijari",
                 "urgency": "MOYENNE"
             }
         }
         
-        # Catalogue des services bancaires (coûts en TND)
+        # Catalogue des services bancaires RÉELS d'Attijari Bank Tunisia (coûts en TND)
         self.services_catalog = {
-            "carte_bancaire": {
-                "nom": "Carte Bancaire Moderne",
-                "description": "Carte avec technologie sans contact et contrôle mobile",
-                "avantages": ["Paiements rapides", "Sécurité renforcée", "Contrôle temps réel"],
-                "cible": "Remplace progressivement les chèques",
-                "cout": 0  # TND
+            "attijari_mobile": {
+                "nom": "Attijari Mobile Tunisia",
+                "description": "Application mobile officielle pour gérer vos comptes 24h/24, 7j/7",
+                "avantages": ["Consultation soldes en temps réel", "Historique 6 mois", "Virements gratuits", "Contrôle chéquier"],
+                "cible": "Réduction significative des chèques par virements mobiles",
+                "cout": 0,  # TND - Service gratuit
+                "lien_produit": "https://play.google.com/store/apps/details?id=tn.com.attijarirealtime.mobile",
+                "type": "Mobile Banking"
             },
-            "mobile_banking": {
-                "nom": "Application Mobile Banking",
-                "description": "Gestion complète de vos comptes depuis votre smartphone",
-                "avantages": ["Virements instantanés", "Suivi temps réel", "Notifications"],
-                "cible": "Réduction significative des chèques",
-                "cout": 0
+            "flouci_payment": {
+                "nom": "Flouci - Paiement Mobile",
+                "description": "Solution de paiement mobile rapide et sécurisé d'Attijari Bank",
+                "avantages": ["Paiements instantanés", "Transferts rapides", "Marchands partenaires", "Sécurité avancée"],
+                "cible": "Alternative moderne aux chèques pour paiements",
+                "cout": 0,  # TND - Frais par transaction
+                "lien_produit": "https://www.attijaribank.com.tn/fr",
+                "type": "Paiement Digital"
             },
-            "virement_automatique": {
-                "nom": "Virements Automatiques",
-                "description": "Automatisation des paiements récurrents",
-                "avantages": ["Pas d'oubli", "Économie de temps", "Réduction des frais"],
-                "cible": "Élimination des chèques récurrents",
-                "cout": 0
+            "attijari_realtime": {
+                "nom": "Attijari Real Time",
+                "description": "Plateforme bancaire en ligne pour gestion complète 24h/24",
+                "avantages": ["Virements permanents", "Consultation crédits", "Tableaux amortissement", "Services en ligne"],
+                "cible": "Élimination des chèques récurrents par automatisation",
+                "cout": 0,  # TND - Inclus dans les packs
+                "lien_produit": "https://www.attijarirealtime.com.tn/",
+                "type": "Banque en Ligne"
             },
-            "paiement_mobile": {
-                "nom": "Paiement Mobile (QR Code)",
-                "description": "Paiements instantanés par QR Code",
-                "avantages": ["Instantané", "Sécurisé", "Pratique"],
-                "cible": "Alternative moderne aux chèques",
-                "cout": 0
+            "webank_account": {
+                "nom": "WeBank - Compte Digital",
+                "description": "Compte bancaire 100% digital, ouverture directe sur téléphone",
+                "avantages": ["Ouverture rapide", "Gestion mobile", "Frais réduits", "Services digitaux inclus"],
+                "cible": "Transition complète vers le digital",
+                "cout": 0,  # TND - Selon pack choisi
+                "lien_produit": "https://www.attijaribank.com.tn/fr",
+                "type": "Compte Digital"
             },
-            "carte_sans_contact": {
-                "nom": "Carte Sans Contact Premium",
-                "description": "Carte avec plafond élevé et fonctionnalités avancées",
-                "avantages": ["Plafond élevé", "Assurances incluses", "Cashback"],
-                "cible": "Remplace les chèques de gros montants",
-                "cout": 150  # TND/an
+            "travel_card": {
+                "nom": "Travel Card Attijari",
+                "description": "Carte prépayée rechargeable pour tous vos paiements",
+                "avantages": ["Rechargeable 24h/24", "Paiements sécurisés", "Contrôle budget", "Sans découvert"],
+                "cible": "Remplace les chèques par carte prépayée",
+                "cout": 50,  # TND/an
+                "lien_produit": "https://www.attijaribank.com.tn/fr",
+                "type": "Carte Bancaire"
             },
-            "services_premium": {
-                "nom": "Pack Services Premium",
-                "description": "Ensemble de services bancaires avancés",
-                "avantages": ["Conseiller dédié", "Frais réduits", "Services prioritaires"],
-                "cible": "Optimisation complète des services",
-                "cout": 600  # TND/an
+            "pack_senior_plus": {
+                "nom": "Pack Senior Plus",
+                "description": "Pack spécialement conçu pour les clients seniors",
+                "avantages": ["Services adaptés", "Accompagnement personnalisé", "Tarifs préférentiels", "Formation digitale"],
+                "cible": "Transition progressive des seniors vers le digital",
+                "cout": 120,  # TND/an
+                "lien_produit": "https://www.attijaribank.com.tn/fr",
+                "type": "Pack Services"
             },
-            "formation_digital": {
-                "nom": "Formation Services Digitaux",
-                "description": "Accompagnement personnalisé vers le digital",
-                "avantages": ["Formation gratuite", "Support dédié", "Transition accompagnée"],
-                "cible": "Adoption progressive des alternatives",
-                "cout": 0
+            "credit_conso": {
+                "nom": "Crédit Consommation 100% en ligne",
+                "description": "Crédit personnel entièrement digital, simulation et demande en ligne",
+                "avantages": ["Traitement rapide", "Simulation gratuite", "Dossier digital", "Taux attractifs"],
+                "cible": "Financement sans chèques de garantie",
+                "cout": 0,  # TND - Frais de dossier selon montant
+                "lien_produit": "https://www.attijaribank.com.tn/fr",
+                "type": "Crédit"
             },
-            "accompagnement_personnel": {
-                "nom": "Accompagnement Personnel",
-                "description": "Conseiller dédié pour la transition",
-                "avantages": ["Conseils personnalisés", "Suivi régulier", "Adaptation graduelle"],
-                "cible": "Changement en douceur des habitudes",
-                "cout": 0
+            "pack_exclusif": {
+                "nom": "Pack Compte Exclusif",
+                "description": "Package premium avec services bancaires avancés",
+                "avantages": ["Conseiller dédié", "Frais réduits", "Services prioritaires", "Carte Premium incluse"],
+                "cible": "Optimisation complète des services bancaires",
+                "cout": 600,  # TND/an
+                "lien_produit": "https://www.attijaribank.com.tn/fr",
+                "type": "Pack Premium"
             }
         }
         
@@ -249,6 +288,20 @@ class RecommendationEngine:
         self._validate_recommendation_rules()
         
         print("[RECOMMENDATION] Système de recommandation initialisé")
+    
+    def get_segmentation_info(self) -> Dict[str, Any]:
+        """Retourne les informations sur le système de segmentation utilisé."""
+        info = {
+            "enhanced_available": ENHANCED_SEGMENTATION_AVAILABLE,
+            "enhanced_used": self.use_enhanced_segmentation,
+            "supported_segments": list(self.recommendation_rules.keys())
+        }
+        
+        if self.use_enhanced_segmentation:
+            segmentation_summary = self.enhanced_segmentation_engine.get_segmentation_summary()
+            info["enhanced_details"] = segmentation_summary
+        
+        return info
     
     def _validate_recommendation_rules(self):
         """Valide que tous les services dans les règles existent dans le catalogue."""
@@ -270,11 +323,25 @@ class RecommendationEngine:
     def generate_recommendations(self, client_data: Dict[str, Any]) -> Dict[str, Any]:
         """Génère des recommandations personnalisées pour un client."""
         
-        # Analyse du comportement
-        behavior_profile = self.behavior_analyzer.analyze_client_behavior(client_data)
+        # Analyse du comportement avec segmentation avancée si disponible
+        if self.use_enhanced_segmentation:
+            # Utilisation de la segmentation comportementale avancée
+            enhanced_analysis = self.enhanced_segmentation_engine.analyze_client_behavior(client_data)
+            behavior_profile = {
+                'behavior_segment': enhanced_analysis['behavior_segment'],
+                'behavioral_scores': enhanced_analysis['behavioral_scores'],
+                'confidence': enhanced_analysis['analysis_metadata']['analysis_confidence'],
+                'enhanced': True,
+                'legacy_compatibility': self.behavior_analyzer.analyze_client_behavior(client_data)
+            }
+            segment = enhanced_analysis['behavior_segment']
+        else:
+            # Fallback vers l'analyse standard
+            behavior_profile = self.behavior_analyzer.analyze_client_behavior(client_data)
+            behavior_profile['enhanced'] = False
+            segment = behavior_profile['behavior_segment']
         
         # Sélection des recommandations
-        segment = behavior_profile['behavior_segment']
         recommendations = self._select_recommendations(client_data, behavior_profile, segment)
         
         # Calcul des scores de pertinence
@@ -298,23 +365,32 @@ class RecommendationEngine:
                               behavior_profile: Dict[str, Any], segment: str) -> List[str]:
         """Sélectionne les recommandations appropriées selon le segment."""
         
+        # VALIDATION SÉCURISÉE des données client
+        if not isinstance(client_data, dict):
+            raise ValueError("client_data doit être un dictionnaire")
+        
+        # Validation et nettoyage des données numériques sensibles
+        mobile_banking = int(client_data.get('Utilise_Mobile_Banking', 0)) if client_data.get('Utilise_Mobile_Banking') in [0, 1] else 0
+        revenu_estime = max(0, min(float(client_data.get('Revenu_Estime', 0)), 1000000))  # Plafond réaliste
+        nbr_cheques_2024 = max(0, min(int(client_data.get('Nbr_Cheques_2024', 0)), 500))  # Plafond réaliste
+        
         base_recommendations = self.recommendation_rules.get(segment, {}).get('priority', [])
         
-        # Ajustements selon le profil spécifique
+        # Ajustements selon le profil spécifique (avec données validées)
         adjusted_recommendations = base_recommendations.copy()
         
-        # Si le client utilise déjà mobile banking, ne pas le recommander
-        if client_data.get('Utilise_Mobile_Banking', 0):
-            adjusted_recommendations = [r for r in adjusted_recommendations if r != 'mobile_banking']
+        # Si le client utilise déjà mobile banking, ne pas recommander Attijari Mobile
+        if mobile_banking:
+            adjusted_recommendations = [r for r in adjusted_recommendations if r != 'attijari_mobile']
         
-        # Si le client a un revenu élevé, ajouter des services premium
-        if client_data.get('Revenu_Estime', 0) > 80000:
-            if 'services_premium' not in adjusted_recommendations:
-                adjusted_recommendations.append('services_premium')
+        # Si le client a un revenu élevé, ajouter des services premium Attijari
+        if revenu_estime > 80000:
+            if 'pack_exclusif' not in adjusted_recommendations:
+                adjusted_recommendations.append('pack_exclusif')
         
-        # Si le client a beaucoup de chèques, prioriser les alternatives directes
-        if client_data.get('Nbr_Cheques_2024', 0) > 10:
-            priority_alternatives = ['carte_bancaire', 'virement_automatique', 'paiement_mobile']
+        # Si le client a beaucoup de chèques, prioriser les alternatives directes Attijari
+        if nbr_cheques_2024 > 10:
+            priority_alternatives = ['travel_card', 'attijari_realtime', 'flouci_payment']
             adjusted_recommendations = priority_alternatives + adjusted_recommendations
         
         # VALIDATION CRITIQUE: Supprimer les services qui n'existent pas dans le catalogue
@@ -369,16 +445,16 @@ class RecommendationEngine:
         revenu = client_data.get('Revenu_Estime', 30000)
         digital_adoption = client_data.get('Utilise_Mobile_Banking', 0)
         
-        # Scores spécifiques par service
+        # Scores spécifiques par service RÉEL Attijari Bank
         service_scores = {
-            'carte_bancaire': min(0.8 + (nbr_cheques * 0.1), 1.0),
-            'mobile_banking': 0.9 if not digital_adoption else 0.2,
-            'virement_automatique': min(0.7 + (nbr_cheques * 0.05), 1.0),
-            'paiement_mobile': 0.8 if digital_adoption else 0.4,
-            'carte_sans_contact': min(0.6 + (revenu / 100000), 1.0),
-            'services_premium': min(revenu / 150000, 1.0),
-            'formation_digital': 0.9 if not digital_adoption else 0.1,
-            'accompagnement_personnel': 0.8 if nbr_cheques > 5 else 0.4
+            'attijari_mobile': 0.9 if not digital_adoption else 0.2,
+            'flouci_payment': 0.8 if digital_adoption else 0.4,
+            'attijari_realtime': min(0.7 + (nbr_cheques * 0.05), 1.0),
+            'webank_account': 0.85 if digital_adoption else 0.3,
+            'travel_card': min(0.8 + (nbr_cheques * 0.1), 1.0),
+            'pack_senior_plus': 0.8 if nbr_cheques > 5 else 0.4,
+            'credit_conso': min(revenu / 80000, 1.0),
+            'pack_exclusif': min(revenu / 150000, 1.0)
         }
         
         return service_scores.get(service_id, 0.5)
@@ -469,16 +545,16 @@ class RecommendationEngine:
         digital_adoption = client_data.get('Utilise_Mobile_Banking', 0)
         check_evolution = client_data.get('Ecart_Nbr_Cheques_2024_2025', 0)
         
-        # Estimation de réduction des chèques par service (ajustée selon le profil)
+        # Estimation de réduction des chèques par service RÉEL Attijari Bank
         base_impact_rates = {
-            'carte_bancaire': 0.25,
-            'mobile_banking': 0.35,
-            'virement_automatique': 0.20,
-            'paiement_mobile': 0.30,
-            'carte_sans_contact': 0.15,
-            'services_premium': 0.10,
-            'formation_digital': 0.25,
-            'accompagnement_personnel': 0.20
+            'attijari_mobile': 0.35,  # Impact élevé - virements mobiles remplacent chèques
+            'flouci_payment': 0.30,   # Paiements instantanés vs chèques
+            'attijari_realtime': 0.20, # Virements permanents automatisés
+            'webank_account': 0.25,   # Compte digital complet
+            'travel_card': 0.25,      # Carte prépayée vs chèques
+            'pack_senior_plus': 0.20, # Transition progressive
+            'credit_conso': 0.10,     # Impact indirect
+            'pack_exclusif': 0.15     # Services premium
         }
         
         total_impact = 0
@@ -494,8 +570,8 @@ class RecommendationEngine:
             # Facteur d'ajustement basé sur le profil
             adjustment_factor = 1.0
             
-            # Si le client utilise déjà mobile banking, impact plus élevé pour services digitaux
-            if digital_adoption and service_id in ['paiement_mobile', 'carte_sans_contact']:
+            # Si le client utilise déjà mobile banking, impact plus élevé pour services digitaux Attijari
+            if digital_adoption and service_id in ['flouci_payment', 'webank_account']:
                 adjustment_factor = 1.3
             
             # Si le client a déjà réduit ses chèques, impact moindre
@@ -560,16 +636,16 @@ class RecommendationEngine:
     def _estimate_service_revenue(self, service_id: str, usage_frequency: float, avg_amount: float) -> float:
         """Estime les revenus générés par un service."""
         
-        # Revenus estimés par service (par usage en TND)
+        # Revenus estimés par service RÉEL Attijari Bank (par usage en TND)
         revenue_rates = {
-            'carte_bancaire': 0.9,  # TND par usage
-            'mobile_banking': 0.3,  # TND par usage
-            'virement_automatique': 0.6,  # TND par usage
-            'paiement_mobile': 0.45,  # TND par usage
-            'carte_sans_contact': 1.05,  # TND par usage
-            'services_premium': 15.0,  # TND par usage
-            'formation_digital': 0.0,  # TND par usage
-            'accompagnement_personnel': 0.0  # TND par usage
+            'attijari_mobile': 0.3,       # TND par usage - frais virements
+            'flouci_payment': 0.45,       # TND par usage - commission paiements
+            'attijari_realtime': 0.6,     # TND par usage - frais virements web
+            'webank_account': 0.5,        # TND par usage - frais compte digital
+            'travel_card': 0.9,           # TND par usage - frais carte prépayée
+            'pack_senior_plus': 10.0,     # TND par usage - frais pack mensuel
+            'credit_conso': 25.0,         # TND par usage - frais crédit
+            'pack_exclusif': 50.0         # TND par usage - frais pack premium
         }
         
         rate = revenue_rates.get(service_id, 0.2)
@@ -803,16 +879,16 @@ class RecommendationTracker:
     def _estimate_financial_impact_global(self, adoptions: Dict[str, List]) -> Dict[str, float]:
         """Estime l'impact financier global des adoptions."""
         
-        # Revenus estimés par service (annuels en TND)
+        # Revenus estimés par service RÉEL Attijari Bank (annuels en TND)
         service_revenues = {
-            'carte_bancaire': 72,  # TND/an
-            'mobile_banking': 36,  # TND/an
-            'virement_automatique': 54,  # TND/an
-            'paiement_mobile': 45,  # TND/an
-            'carte_sans_contact': 108,  # TND/an
-            'services_premium': 600,  # TND/an
-            'formation_digital': 0,  # TND/an
-            'accompagnement_personnel': 0  # TND/an
+            'attijari_mobile': 36,        # TND/an - frais virements mobiles
+            'flouci_payment': 54,         # TND/an - commissions paiements
+            'attijari_realtime': 72,      # TND/an - frais virements web
+            'webank_account': 60,         # TND/an - frais compte digital
+            'travel_card': 108,           # TND/an - frais carte + recharges
+            'pack_senior_plus': 120,      # TND/an - coût pack
+            'credit_conso': 300,          # TND/an - frais crédit moyen
+            'pack_exclusif': 600          # TND/an - coût pack premium
         }
         
         total_revenue = 0
